@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Application>
+
+  <_Project>
+    <ProjectName val="UiExpert"/>
+    <VCProjectID val="0"/>
+    <VCActive val="N"/>
+    <WorkOffline val="N"/>
+    <VCUseGitPlugin val="N"/>
+    <SourceDirectory val="Source"/>
+    <ExportsDirectory val="Exports"/>
+    <GUID val="{7CD5C549-2776-41CB-921B-0CC95C205DCE}"/>
+    <Version min="13020.10"/>
+    <SourceVersion val="14120.00"/>
+  </_Project>
+
+</Application>

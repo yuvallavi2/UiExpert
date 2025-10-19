@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Application>
+
+  <Header>
+    <Version val="14120.00"/>
+    <WithIsn val="Y"/>
+    <Exe comp="-1"/>
+    <LastIsn val="94"/>
+    <LastIsnFolder val="7"/>
+    <Folders>
+      <Folder id="33554438">
+        <Name val="EventsBatch"/>
+      </Folder>
+      <Folder id="33554437">
+        <Name val="Events"/>
+      </Folder>
+      <Folder id="1">
+        <Name val="Members"/>
+      </Folder>
+      <Folder id="33554436">
+        <Name val="MembersBatch"/>
+      </Folder>
+      <Folder id="33554434">
+        <Name val="mainWC"/>
+      </Folder>
+      <Folder id="33554439">
+        <Name val="Shared"/>
+        <WebModule val="Y"/>
+        <LoadOnDemand val="Y"/>
+      </Folder>
+    </Folders>
+  </Header>
+
+  <ProgramsRepositoryOutLine>
+    <Programs>
+      <Program id="1"/>
+      <Program id="33554500"/>
+      <Program id="33554516"/>
+      <Program FolderIsn="33554438" id="33554505"/>
+      <Program FolderIsn="33554438" id="33554507"/>
+      <Program FolderIsn="33554438" id="33554510"/>
+      <Program FolderIsn="33554438" id="33554511"/>
+      <Program FolderIsn="33554438" id="33554519"/>
+      <Program FolderIsn="33554438" id="33554508"/>
+      <Program FolderIsn="33554437" id="33554488"/>
+      <Program FolderIsn="33554437" id="33554489"/>
+      <Program FolderIsn="33554437" id="33554490"/>
+      <Program FolderIsn="33554437" id="33554504"/>
+      <Program FolderIsn="33554437" id="33554509"/>
+      <Program FolderIsn="1" id="5"/>
+      <Program FolderIsn="1" id="8"/>
+      <Program FolderIsn="1" id="33554465"/>
+      <Program FolderIsn="1" id="33554492"/>
+      <Program FolderIsn="33554436" id="3"/>
+      <Program FolderIsn="33554436" id="11"/>
+      <Program FolderIsn="33554436" id="33554466"/>
+      <Program FolderIsn="33554436" id="33554480"/>
+      <Program FolderIsn="33554436" id="33554493"/>
+      <Program FolderIsn="33554434" id="33554462"/>
+      <Program FolderIsn="33554434" id="33554463"/>
+    </Programs>
+  </ProgramsRepositoryOutLine>
+
+</Application>
