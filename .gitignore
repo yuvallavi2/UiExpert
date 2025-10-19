@@ -8,3 +8,5 @@
 *.log
 *.XRF
 MagicIDs/branchIDs*.*
+Developer.ini
+Start.lnk
