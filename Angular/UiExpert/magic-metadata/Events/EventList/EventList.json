@@ -1,0 +1,424 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"EventList",
+		"window_type":	1,
+		"component_path":	"Events/EventList/",
+		"module_name":	"",
+		"component_uniquename":	"EventList_EventList"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	908,
+		"height":	476
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"MainGroup",
+				"visible":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"common_line_id":	"line9"
+			},
+			"coordinates":	{
+				"x":	8,
+				"y":	9,
+				"width":	660,
+				"height":	258
+			},
+			"hint":	null,
+			"controlType":	"G",
+			"children":	[
+				{
+					"style":	null,
+					"props":	{
+						"id":	"TableEventList",
+						"table_row_height":	56,
+						"table_title_height":	20,
+						"common_line_id":	"line28"
+					},
+					"coordinates":	{
+						"x":	24,
+						"y":	28,
+						"width":	569,
+						"height":	167
+					},
+					"hint":	null,
+					"controlType":	"A",
+					"children":	[
+						{
+							"style":	null,
+							"props":	{
+								"id":	"EventID",
+								"column_title":	"Event ID",
+								"sortable":	true,
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	74
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Event_Inforrmation_Event_ID",
+										"mgformat":	"mgFormat",
+										"format":	"##########",
+										"attribute":	"N",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line52"
+									},
+									"coordinates":	{
+										"x":	28,
+										"y":	52,
+										"width":	66,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"EventType",
+								"column_title":	"Event Type",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	74
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Event_Inforrmation_Event_Type",
+										"mgformat":	"mgFormat",
+										"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+										"attribute":	"A",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line52"
+									},
+									"coordinates":	{
+										"x":	102,
+										"y":	52,
+										"width":	66,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"EventName",
+								"column_title":	"Event Name",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	74
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Event_Inforrmation_Event_Name",
+										"mgformat":	"mgFormat",
+										"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+										"attribute":	"A",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line52"
+									},
+									"coordinates":	{
+										"x":	176,
+										"y":	52,
+										"width":	66,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"EventLocation",
+								"column_title":	"Event Location",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	86
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Event_Location",
+										"mgformat":	"mgFormat",
+										"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+										"attribute":	"A",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line52"
+									},
+									"coordinates":	{
+										"x":	250,
+										"y":	52,
+										"width":	80,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"StartDate",
+								"column_title":	"Start Date",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	86
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Event_Inforrmation_Start_Date",
+										"formatter":	"magicDate",
+										"mgformat":	"mgFormat",
+										"format":	"DD/MM/YYYY",
+										"attribute":	"D",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line52"
+									},
+									"coordinates":	{
+										"x":	336,
+										"y":	52,
+										"width":	78,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"EndDate",
+								"column_title":	"End Date",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	86
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Event_Inforrmation_End_Date",
+										"formatter":	"magicDate",
+										"mgformat":	"mgFormat",
+										"format":	"DD/MM/YYYY",
+										"attribute":	"D",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line52"
+									},
+									"coordinates":	{
+										"x":	422,
+										"y":	52,
+										"width":	78,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Column_Action",
+								"column_title":	"Action",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	85
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"btn_Modify",
+										"visible":	{
+											"value":	null,
+											"has_exp":	true
+										},
+										"format":	"Modify",
+										"is_table_child":	true,
+										"web_style":	2,
+										"row_editing_type":	0,
+										"common_line_id":	"line52"
+									},
+									"coordinates":	{
+										"x":	510,
+										"y":	52,
+										"width":	75,
+										"height":	23
+									},
+									"hint":	null,
+									"controlType":	"B",
+									"children":	null
+								},
+								{
+									"style":	null,
+									"props":	{
+										"id":	"btn_Delete",
+										"visible":	{
+											"value":	null,
+											"has_exp":	true
+										},
+										"format":	"Delete",
+										"is_table_child":	true,
+										"web_style":	2,
+										"row_editing_type":	0,
+										"common_line_id":	"line81"
+									},
+									"coordinates":	{
+										"x":	511,
+										"y":	81,
+										"width":	75,
+										"height":	23
+									},
+									"hint":	null,
+									"controlType":	"B",
+									"children":	null
+								}
+							]
+						}
+					]
+				},
+				{
+					"style":	null,
+					"props":	{
+						"id":	"BtnViewRefresh",
+						"format":	"ViewRefresh",
+						"common_line_id":	"line201"
+					},
+					"coordinates":	{
+						"x":	359,
+						"y":	214,
+						"width":	74,
+						"height":	22
+					},
+					"hint":	null,
+					"controlType":	"B",
+					"children":	null
+				},
+				{
+					"style":	null,
+					"props":	{
+						"id":	"btnCreateEvent",
+						"format":	"Create New Event",
+						"common_line_id":	"line201"
+					},
+					"coordinates":	{
+						"x":	462,
+						"y":	201,
+						"width":	131,
+						"height":	36
+					},
+					"hint":	null,
+					"controlType":	"B",
+					"children":	null
+				}
+			]
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"SFEventCard",
+				"visible":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"common_line_id":	"line22"
+			},
+			"coordinates":	{
+				"x":	697,
+				"y":	22,
+				"width":	168,
+				"height":	361
+			},
+			"hint":	null,
+			"controlType":	"F",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"V_vToggleSubForm",
+				"items_list":	"True,False",
+				"mgformat":	"mgFormat",
+				"validator":	"rangevalidator",
+				"format":	"XXXXX",
+				"attribute":	"B",
+				"common_line_id":	"line389"
+			},
+			"coordinates":	{
+				"x":	697,
+				"y":	389,
+				"width":	41,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		}
+	]
+}

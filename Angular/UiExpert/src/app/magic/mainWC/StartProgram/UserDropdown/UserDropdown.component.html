@@ -1,0 +1,52 @@
+<div
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        style="display: flex; flex-direction: column"
+        [magic]="mgc.UserDropdown"
+    >
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.numberOfUpdates"
+            >
+                30
+            </button>
+            <div *ngIf="mg.isImageExists(mgc.userImage)">
+                <img
+                    [magic]="mgc.userImage"
+                    [src]="mg.getImage(mgc.userImage)"
+                />
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.numberOfMessages"
+            >
+                30
+            </button>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.btnSettings"
+            >
+                Button
+            </button>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.btnLogOut"
+            >
+                Button
+            </button>
+        </div>
+    </div>
+</div>

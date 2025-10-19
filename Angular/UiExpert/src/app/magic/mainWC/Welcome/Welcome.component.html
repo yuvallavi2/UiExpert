@@ -1,0 +1,25 @@
+<div
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        style="display: flex; flex-direction: column"
+        [magic]="mgc.Welcome"
+    >
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            [magic]="mgc.welcomeText"
+                            [formControlName]="mgc.welcomeText"
+                            mgFormat
+                        >
+                        <mgError [magic]=mgc.welcomeText> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

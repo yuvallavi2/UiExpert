@@ -1,0 +1,207 @@
+<div
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        style="display: flex; flex-direction: column"
+        [magic]="mgc.EventCard"
+    >
+        <div style="display: flex; flex-direction: row">
+            <label [magic]="mgc.Event_ID">
+                {{mg.getValue(mgc.Event_ID) }}
+            </label>
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            [magic]="mgc.P_pBtnVisibility"
+                            [formControlName]="mgc.P_pBtnVisibility"
+                            mgFormat
+                            rangevalidator
+                        >
+                        <mgError [magic]=mgc.P_pBtnVisibility> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <mat-select
+                        [magic]="mgc.ComboEventType"
+                        [formControlName]="mgc.ComboEventType"
+                        required
+                    >
+                        <mat-option
+                            *ngFor="let o of mg.getItemListValues(mgc.ComboEventType);"
+                            [value]="o.index"
+                        >
+                            {{o.displayValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mgError [magic]=mgc.ComboEventType> </mgError>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            [magic]="mgc.Event_Name"
+                            [formControlName]="mgc.Event_Name"
+                            mgFormat
+                        >
+                        <mgError [magic]=mgc.Event_Name> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <mat-select
+                        [magic]="mgc.ComboEventLocation"
+                        [formControlName]="mgc.ComboEventLocation"
+                    >
+                        <mat-option
+                            *ngFor="let o of mg.getItemListValues(mgc.ComboEventLocation);"
+                            [value]="o.index"
+                        >
+                            {{o.displayValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field
+                    [magic]="mgc.Start_Date"
+                    [eventsOnly]=true
+                >
+                    <input
+                        matInput
+                        [matDatepicker]="Start_Date"
+                        [magic]="mgc.Start_Date"
+                        [formControlName]="mgc.Start_Date"
+                        mgFormat
+                    >
+                    <mat-datepicker-toggle
+                        matSuffix
+                        [for]="Start_Date"
+                        *ngIf="!mg.checkIsReadOnly(mgc.Start_Date)"
+                    >
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #Start_Date></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field
+                    [magic]="mgc.End_Date"
+                    [eventsOnly]=true
+                >
+                    <input
+                        matInput
+                        [matDatepicker]="End_Date"
+                        [magic]="mgc.End_Date"
+                        [formControlName]="mgc.End_Date"
+                        mgFormat
+                    >
+                    <mat-datepicker-toggle
+                        matSuffix
+                        [for]="End_Date"
+                        *ngIf="!mg.checkIsReadOnly(mgc.End_Date)"
+                    >
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #End_Date></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            type='time'
+                            [magic]="mgc.EventStartTime"
+                            [formControlName]="mgc.EventStartTime"
+                        >
+                        <mgError [magic]=mgc.EventStartTime> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            type='time'
+                            [magic]="mgc.Event_Inforrmation_End_Time"
+                            [formControlName]="mgc.Event_Inforrmation_End_Time"
+                        >
+                        <mgError [magic]=mgc.Event_Inforrmation_End_Time> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            type='number'
+                            [magic]="mgc.Minimum_Attendees"
+                            [formControlName]="mgc.Minimum_Attendees"
+                            mgFormat
+                        >
+                        <mgError [magic]=mgc.Minimum_Attendees> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            type='number'
+                            [magic]="mgc.Maximum_Attendees"
+                            [formControlName]="mgc.Maximum_Attendees"
+                            mgFormat
+                        >
+                        <mgError [magic]=mgc.Maximum_Attendees> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.btnSave"
+                [disabled]="mg.isDisabled(mgc.btnSave )"
+            >
+                Save
+            </button>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <mat-card>
+                <magic-subform [magic]="mgc.SfRegisteredMembers">
+                </magic-subform>
+            </mat-card>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.btnQuit"
+            >
+                CreateQuit
+            </button>
+        </div>
+    </div>
+</div>

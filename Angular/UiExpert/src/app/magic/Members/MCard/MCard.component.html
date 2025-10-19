@@ -1,0 +1,162 @@
+<div
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        style="display: flex; flex-direction: column"
+        [magic]="mgc.MCard"
+    >
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            type='number'
+                            [magic]="mgc.Member_ID"
+                            [formControlName]="mgc.Member_ID"
+                            mgFormat
+                        >
+                        <mgError [magic]=mgc.Member_ID> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            [magic]="mgc.P_pBtnVisibility"
+                            [formControlName]="mgc.P_pBtnVisibility"
+                            mgFormat
+                            rangevalidator
+                        >
+                        <mgError [magic]=mgc.P_pBtnVisibility> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <mat-select
+                        [magic]="mgc.Combo_Title"
+                        [formControlName]="mgc.Combo_Title"
+                        required
+                    >
+                        <mat-option
+                            *ngFor="let o of mg.getItemListValues(mgc.Combo_Title);"
+                            [value]="o.index"
+                        >
+                            {{o.displayValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mgError [magic]=mgc.Combo_Title> </mgError>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            [magic]="mgc.First_Name"
+                            [formControlName]="mgc.First_Name"
+                            mgFormat
+                            required
+                        >
+                        <mgError [magic]=mgc.First_Name> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            [magic]="mgc.Last_Name"
+                            [formControlName]="mgc.Last_Name"
+                            mgFormat
+                            required
+                        >
+                        <mgError [magic]=mgc.Last_Name> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field
+                    [magic]="mgc.Birth_Date"
+                    [eventsOnly]=true
+                >
+                    <input
+                        matInput
+                        [matDatepicker]="Birth_Date"
+                        [magic]="mgc.Birth_Date"
+                        [formControlName]="mgc.Birth_Date"
+                        mgFormat
+                    >
+                    <mat-datepicker-toggle
+                        matSuffix
+                        [for]="Birth_Date"
+                        *ngIf="!mg.checkIsReadOnly(mgc.Birth_Date)"
+                    >
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #Birth_Date></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                <mat-form-field>
+                    <mat-select
+                        [magic]="mgc.Combo_Gender"
+                        [formControlName]="mgc.Combo_Gender"
+                        required
+                    >
+                        <mat-option
+                            *ngFor="let o of mg.getItemListValues(mgc.Combo_Gender);"
+                            [value]="o.index"
+                        >
+                            {{o.displayValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mgError [magic]=mgc.Combo_Gender> </mgError>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.btnSave"
+                [disabled]="mg.isDisabled(mgc.btnSave )"
+            >
+                Save
+            </button>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <mat-card>
+                <magic-subform [magic]="mgc.SubF_M_Contact">
+                </magic-subform>
+            </mat-card>
+            <mat-card>
+                <magic-subform [magic]="mgc.SubFMEmail">
+                </magic-subform>
+            </mat-card>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.btnQuit"
+            >
+                CreateQuit
+            </button>
+        </div>
+    </div>
+</div>

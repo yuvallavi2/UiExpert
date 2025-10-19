@@ -10,3 +10,7 @@
 MagicIDs/branchIDs*.*
 Developer.ini
 Start.lnk
+/input
+/Angular/package-lock.json
+/Angular/node_modules
+/Angular/package.json

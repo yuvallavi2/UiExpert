@@ -1,0 +1,424 @@
+<div
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        style="display: flex; flex-direction: column"
+        [magic]="mgc.MList"
+    >
+        <div style="display: flex; flex-direction: row">
+            <mat-card
+                [magic]="mgc.MainGroup"
+                [style.visibility]="mg.getVisible(mgc.MainGroup)"
+                class="container_border"
+            >
+                <div style="display: flex; flex-direction: row">
+                    <div class="example-container mat-elevation-z8 Table_Member_ListTableContainerProps">
+                        <mat-table
+                            #table
+                            [dataSource]="dataSource"
+                            class="container_border"
+                            matSort
+                            matSortDisableClear
+                            (matSortChange)="tableService.sortData($event)"
+                        >
+                            <ng-container
+                                [magic]="mgc.Column_Member_ID"
+                                [matColumnDef]="mgc.Column_Member_ID"
+                            >
+                                <mat-header-cell
+                                    *matHeaderCellDef
+                                    mat-sort-header
+                                >
+                                    Member ID
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <div>
+                                                <mat-form-field *ngIf="mg.isRowInRowEditing(row)">
+                                                    <div>
+                                                        <input
+                                                            *ngIf="mg.isRowInRowEditing(row)"
+                                                            matInput
+                                                            type='number'
+                                                            [magic]="mgc.Member_ID"
+                                                            [rowId]="row.rowId"
+                                                            [formControlName]="mgc.Member_ID"
+                                                            mgFormat
+                                                        >
+                                                        <mgError
+                                                            [magic]=mgc.Member_ID
+                                                            [rowId]="row.rowId"
+                                                        > </mgError>
+                                                    </div>
+                                                </mat-form-field>
+                                                <label
+                                                    *ngIf="!mg.isRowInRowEditing(row)"
+                                                    [magic]="mgc.Member_ID"
+                                                    [rowId]="row.rowId"
+                                                >
+                                                    {{mg.getValue(mgc.Member_ID, row.rowId)
+}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+                            <ng-container
+                                [magic]="mgc.Column_Title"
+                                [matColumnDef]="mgc.Column_Title"
+                            >
+                                <mat-header-cell *matHeaderCellDef>
+                                    Title
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <div>
+                                                <mat-form-field *ngIf="mg.isRowInRowEditing(row)">
+                                                    <div>
+                                                        <input
+                                                            *ngIf="mg.isRowInRowEditing(row)"
+                                                            matInput
+                                                            [magic]="mgc.Title"
+                                                            [rowId]="row.rowId"
+                                                            [formControlName]="mgc.Title"
+                                                            mgFormat
+                                                        >
+                                                        <mgError
+                                                            [magic]=mgc.Title
+                                                            [rowId]="row.rowId"
+                                                        > </mgError>
+                                                    </div>
+                                                </mat-form-field>
+                                                <label
+                                                    *ngIf="!mg.isRowInRowEditing(row)"
+                                                    [magic]="mgc.Title"
+                                                    [rowId]="row.rowId"
+                                                >
+                                                    {{mg.getValue(mgc.Title, row.rowId)
+}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+                            <ng-container
+                                [magic]="mgc.Column_First_Name"
+                                [matColumnDef]="mgc.Column_First_Name"
+                            >
+                                <mat-header-cell *matHeaderCellDef>
+                                    First Name
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <div>
+                                                <mat-form-field *ngIf="mg.isRowInRowEditing(row)">
+                                                    <div>
+                                                        <input
+                                                            *ngIf="mg.isRowInRowEditing(row)"
+                                                            matInput
+                                                            [magic]="mgc.First_Name"
+                                                            [rowId]="row.rowId"
+                                                            [formControlName]="mgc.First_Name"
+                                                            mgFormat
+                                                        >
+                                                        <mgError
+                                                            [magic]=mgc.First_Name
+                                                            [rowId]="row.rowId"
+                                                        > </mgError>
+                                                    </div>
+                                                </mat-form-field>
+                                                <label
+                                                    *ngIf="!mg.isRowInRowEditing(row)"
+                                                    [magic]="mgc.First_Name"
+                                                    [rowId]="row.rowId"
+                                                >
+                                                    {{mg.getValue(mgc.First_Name, row.rowId)
+}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+                            <ng-container
+                                [magic]="mgc.Column_Last_Name"
+                                [matColumnDef]="mgc.Column_Last_Name"
+                            >
+                                <mat-header-cell *matHeaderCellDef>
+                                    Last Name
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <div>
+                                                <mat-form-field *ngIf="mg.isRowInRowEditing(row)">
+                                                    <div>
+                                                        <input
+                                                            *ngIf="mg.isRowInRowEditing(row)"
+                                                            matInput
+                                                            [magic]="mgc.Last_Name"
+                                                            [rowId]="row.rowId"
+                                                            [formControlName]="mgc.Last_Name"
+                                                            mgFormat
+                                                        >
+                                                        <mgError
+                                                            [magic]=mgc.Last_Name
+                                                            [rowId]="row.rowId"
+                                                        > </mgError>
+                                                    </div>
+                                                </mat-form-field>
+                                                <label
+                                                    *ngIf="!mg.isRowInRowEditing(row)"
+                                                    [magic]="mgc.Last_Name"
+                                                    [rowId]="row.rowId"
+                                                >
+                                                    {{mg.getValue(mgc.Last_Name, row.rowId)
+}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+                            <ng-container
+                                [magic]="mgc.Column_Birth_Date"
+                                [matColumnDef]="mgc.Column_Birth_Date"
+                            >
+                                <mat-header-cell *matHeaderCellDef>
+                                    Birth Date
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <div>
+                                                <mat-form-field
+                                                    [magic]="mgc.Birth_Date"
+                                                    [rowId]="row.rowId"
+                                                    [eventsOnly]=true
+                                                    *ngIf="mg.isRowInRowEditing(row)"
+                                                >
+                                                    <div style="display: flex; flex-direction: row">
+                                                        <input
+                                                            matInput
+                                                            [matDatepicker]="Birth_Date"
+                                                            [magic]="mgc.Birth_Date"
+                                                            [rowId]="row.rowId"
+                                                            [formControlName]="mgc.Birth_Date"
+                                                            mgFormat
+                                                        >
+                                                        <mat-datepicker-toggle
+                                                            matSuffix
+                                                            [for]="Birth_Date"
+                                                            *ngIf="!mg.checkIsReadOnly(mgc.Birth_Date) &&  mg.isRowInRowEditing(row)"
+                                                        >
+                                                        </mat-datepicker-toggle>
+                                                        <mat-datepicker #Birth_Date></mat-datepicker>
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                            <label
+                                                *ngIf="!mg.isRowInRowEditing(row)"
+                                                [magic]="mgc.Birth_Date"
+                                                [rowId]="row.rowId"
+                                            >
+                                                {{mg.getValue(mgc.Birth_Date, row.rowId)
+| magicDate : mgc.Birth_Date}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+                            <ng-container
+                                [magic]="mgc.Column_Gender"
+                                [matColumnDef]="mgc.Column_Gender"
+                            >
+                                <mat-header-cell *matHeaderCellDef>
+                                    Gender
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <div>
+                                                <mat-form-field *ngIf="mg.isRowInRowEditing(row)">
+                                                    <div>
+                                                        <input
+                                                            *ngIf="mg.isRowInRowEditing(row)"
+                                                            matInput
+                                                            [magic]="mgc.Gender"
+                                                            [rowId]="row.rowId"
+                                                            [formControlName]="mgc.Gender"
+                                                            mgFormat
+                                                        >
+                                                        <mgError
+                                                            [magic]=mgc.Gender
+                                                            [rowId]="row.rowId"
+                                                        > </mgError>
+                                                    </div>
+                                                </mat-form-field>
+                                                <label
+                                                    *ngIf="!mg.isRowInRowEditing(row)"
+                                                    [magic]="mgc.Gender"
+                                                    [rowId]="row.rowId"
+                                                >
+                                                    {{mg.getValue(mgc.Gender, row.rowId)
+}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+                            <ng-container
+                                [magic]="mgc.Column_Action"
+                                [matColumnDef]="mgc.Column_Action"
+                            >
+                                <mat-header-cell *matHeaderCellDef>
+                                    Action
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <button
+                                            mat-raised-button
+                                            color="primary"
+                                            [magic]="mgc.btn_Modify"
+                                            [rowId]="row.rowId"
+                                            [style.visibility]="mg.getVisible(mgc.btn_Modify, row.rowId)"
+                                        >
+                                            Modify
+                                        </button>
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <button
+                                            mat-raised-button
+                                            color="primary"
+                                            [magic]="mgc.btn_Delete"
+                                            [rowId]="row.rowId"
+                                            [style.visibility]="mg.getVisible(mgc.btn_Delete, row.rowId)"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row
+                                *matRowDef="let row; columns: displayedColumns;"
+                                class="table_row"
+                                [ngClass]="{ 'selected': selection.isSelected(row)}"
+                                [magicRow]="row?.rowId"
+                                (click)="row? tableService.selectRow(row.rowId) : null"
+                            >
+                            </mat-row>
+                        </mat-table>
+                        <mat-paginator
+                            #paginator
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 20]"
+                            (page)="tableService.mgOnPaginateChange($event)"
+                        >
+                        </mat-paginator>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: row">
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        [magic]="mgc.btn_CreateMember"
+                    >
+                        Create New Member
+                    </button>
+                </div>
+            </mat-card>
+            <mat-card [style.visibility]="mg.getVisible(mgc.SFMCard)">
+                <magic-subform
+                    [magic]="mgc.SFMCard"
+                    [style.visibility]="mg.getVisible(mgc.SFMCard)"
+                >
+                </magic-subform>
+            </mat-card>
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            [magic]="mgc.V_vToggleSubForm"
+                            [formControlName]="mgc.V_vToggleSubForm"
+                            mgFormat
+                            rangevalidator
+                        >
+                        <mgError [magic]=mgc.V_vToggleSubForm> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"Welcome",
+		"component_path":	"mainWC/Welcome/",
+		"module_name":	"",
+		"component_uniquename":	"Welcome_Welcome"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	0,
+		"height":	0
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"welcomeText",
+				"mgformat":	"mgFormat",
+				"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+				"attribute":	"A",
+				"common_line_id":	"line22"
+			},
+			"coordinates":	{
+				"x":	162,
+				"y":	22,
+				"width":	76,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		}
+	]
+}

@@ -1,0 +1,43 @@
+<div
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        style="display: flex; flex-direction: column"
+        [magic]="mgc.StartProgram"
+    >
+        <div style="display: flex; flex-direction: row">
+            <button
+                mat-raised-button
+                color="primary"
+                [magic]="mgc.btnHelloXPA"
+            >
+                HelloXPA
+            </button>
+            <div>
+                <mat-form-field>
+                    <div>
+                        <input
+                            matInput
+                            [magic]="mgc.headerText"
+                            [formControlName]="mgc.headerText"
+                            mgFormat
+                        >
+                        <mgError [magic]=mgc.headerText> </mgError>
+                    </div>
+                </mat-form-field>
+            </div>
+            <router-outlet [magic]="mgc.SubformRout">
+            </router-outlet>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <label [magic]="mgc.footerText">
+                {{mg.getValue(mgc.footerText) }}
+            </label>
+            <mat-card>
+                <magic-subform [magic]="mgc.userDropdown">
+                </magic-subform>
+            </mat-card>
+        </div>
+    </div>
+</div>

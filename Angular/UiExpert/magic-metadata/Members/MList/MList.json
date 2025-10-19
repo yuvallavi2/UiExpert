@@ -1,0 +1,406 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"MList",
+		"window_type":	1,
+		"component_path":	"Members/MList/",
+		"module_name":	"",
+		"component_uniquename":	"MList_MList"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	882,
+		"height":	501
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"MainGroup",
+				"visible":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"common_line_id":	"line22"
+			},
+			"coordinates":	{
+				"x":	28,
+				"y":	22,
+				"width":	643,
+				"height":	417
+			},
+			"hint":	null,
+			"controlType":	"G",
+			"children":	[
+				{
+					"style":	null,
+					"props":	{
+						"id":	"Table_Member_List",
+						"table_row_height":	56,
+						"table_title_height":	20,
+						"common_line_id":	"line41"
+					},
+					"coordinates":	{
+						"x":	44,
+						"y":	41,
+						"width":	545,
+						"height":	322
+					},
+					"hint":	null,
+					"controlType":	"A",
+					"children":	[
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Column_Member_ID",
+								"column_title":	"Member ID",
+								"sortable":	true,
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	75
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Member_ID",
+										"mgformat":	"mgFormat",
+										"format":	"##########",
+										"attribute":	"N",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line65"
+									},
+									"coordinates":	{
+										"x":	49,
+										"y":	65,
+										"width":	66,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Column_Title",
+								"column_title":	"Title",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	36
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Title",
+										"mgformat":	"mgFormat",
+										"format":	"XXX",
+										"attribute":	"A",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line65"
+									},
+									"coordinates":	{
+										"x":	124,
+										"y":	65,
+										"width":	28,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Column_First_Name",
+								"column_title":	"First Name",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	105
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"First_Name",
+										"mgformat":	"mgFormat",
+										"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+										"attribute":	"A",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line65"
+									},
+									"coordinates":	{
+										"x":	160,
+										"y":	65,
+										"width":	100,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Column_Last_Name",
+								"column_title":	"Last Name",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	105
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Last_Name",
+										"mgformat":	"mgFormat",
+										"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+										"attribute":	"A",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line65"
+									},
+									"coordinates":	{
+										"x":	265,
+										"y":	65,
+										"width":	100,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Column_Birth_Date",
+								"column_title":	"Birth Date",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	86
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Birth_Date",
+										"formatter":	"magicDate",
+										"mgformat":	"mgFormat",
+										"format":	"DD/MM/YYYY",
+										"attribute":	"D",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line65"
+									},
+									"coordinates":	{
+										"x":	370,
+										"y":	65,
+										"width":	78,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Column_Gender",
+								"column_title":	"Gender",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	46
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"Gender",
+										"mgformat":	"mgFormat",
+										"format":	"XXXXXX",
+										"attribute":	"A",
+										"is_table_child":	true,
+										"web_style":	2,
+										"common_line_id":	"line65"
+									},
+									"coordinates":	{
+										"x":	457,
+										"y":	65,
+										"width":	13,
+										"height":	20
+									},
+									"hint":	null,
+									"controlType":	"T",
+									"children":	null
+								}
+							]
+						},
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Column_Action",
+								"column_title":	"Action",
+								"is_table_child":	true,
+								"web_style":	2
+							},
+							"coordinates":	{
+								"width":	85
+							},
+							"hint":	null,
+							"controlType":	"K",
+							"children":	[
+								{
+									"style":	null,
+									"props":	{
+										"id":	"btn_Modify",
+										"visible":	{
+											"value":	null,
+											"has_exp":	true
+										},
+										"format":	"Modify",
+										"is_table_child":	true,
+										"web_style":	2,
+										"row_editing_type":	0,
+										"common_line_id":	"line65"
+									},
+									"coordinates":	{
+										"x":	503,
+										"y":	65,
+										"width":	75,
+										"height":	23
+									},
+									"hint":	null,
+									"controlType":	"B",
+									"children":	null
+								},
+								{
+									"style":	null,
+									"props":	{
+										"id":	"btn_Delete",
+										"visible":	{
+											"value":	null,
+											"has_exp":	true
+										},
+										"format":	"Delete",
+										"is_table_child":	true,
+										"web_style":	2,
+										"row_editing_type":	0,
+										"common_line_id":	"line94"
+									},
+									"coordinates":	{
+										"x":	504,
+										"y":	94,
+										"width":	75,
+										"height":	23
+									},
+									"hint":	null,
+									"controlType":	"B",
+									"children":	null
+								}
+							]
+						}
+					]
+				},
+				{
+					"style":	null,
+					"props":	{
+						"id":	"btn_CreateMember",
+						"format":	"Create New Member",
+						"common_line_id":	"line380"
+					},
+					"coordinates":	{
+						"x":	458,
+						"y":	380,
+						"width":	131,
+						"height":	36
+					},
+					"hint":	null,
+					"controlType":	"B",
+					"children":	null
+				}
+			]
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"SFMCard",
+				"visible":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"common_line_id":	"line22"
+			},
+			"coordinates":	{
+				"x":	677,
+				"y":	22,
+				"width":	168,
+				"height":	361
+			},
+			"hint":	null,
+			"controlType":	"F",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"V_vToggleSubForm",
+				"items_list":	"True,False",
+				"mgformat":	"mgFormat",
+				"validator":	"rangevalidator",
+				"format":	"XXXXX",
+				"attribute":	"B",
+				"common_line_id":	"line22"
+			},
+			"coordinates":	{
+				"x":	677,
+				"y":	389,
+				"width":	41,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		}
+	]
+}

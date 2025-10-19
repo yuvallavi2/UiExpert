@@ -1,0 +1,146 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"MemberSelection",
+		"window_type":	12,
+		"component_path":	"Events/MemberSelection/",
+		"module_name":	"",
+		"component_uniquename":	"MemberSelection_MemberSelection"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	185,
+		"height":	241
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"MemberSelectionTable",
+				"table_row_height":	25,
+				"table_title_height":	20,
+				"common_line_id":	"line12"
+			},
+			"coordinates":	{
+				"x":	12,
+				"y":	12,
+				"width":	147,
+				"height":	94
+			},
+			"hint":	null,
+			"controlType":	"A",
+			"children":	[
+				{
+					"style":	null,
+					"props":	{
+						"id":	"ColumnCheck",
+						"column_title":	"#",
+						"is_table_child":	true,
+						"web_style":	2
+					},
+					"coordinates":	{
+						"width":	28
+					},
+					"hint":	null,
+					"controlType":	"K",
+					"children":	[
+						{
+							"style":	null,
+							"props":	{
+								"id":	"CheckSelect",
+								"text":	"",
+								"attribute":	"B",
+								"is_table_child":	true,
+								"web_style":	2,
+								"common_line_id":	"line36"
+							},
+							"coordinates":	{
+								"x":	16,
+								"y":	36,
+								"width":	20,
+								"height":	15
+							},
+							"hint":	null,
+							"controlType":	"C",
+							"children":	null
+						}
+					]
+				},
+				{
+					"style":	null,
+					"props":	{
+						"id":	"ColumnMemberName",
+						"column_title":	"Member Name",
+						"is_table_child":	true,
+						"web_style":	2
+					},
+					"coordinates":	{
+						"width":	105
+					},
+					"hint":	null,
+					"controlType":	"K",
+					"children":	[
+						{
+							"style":	null,
+							"props":	{
+								"id":	"MemberName",
+								"mgformat":	"mgFormat",
+								"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+								"attribute":	"A",
+								"is_table_child":	true,
+								"web_style":	2,
+								"common_line_id":	"line36"
+							},
+							"coordinates":	{
+								"x":	45,
+								"y":	36,
+								"width":	100,
+								"height":	20
+							},
+							"hint":	null,
+							"controlType":	"T",
+							"children":	null
+						}
+					]
+				}
+			]
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"BtnSelect",
+				"format":	"Select",
+				"common_line_id":	"line117"
+			},
+			"coordinates":	{
+				"x":	12,
+				"y":	117,
+				"width":	63,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"BtnCancel",
+				"format":	"Cancel",
+				"common_line_id":	"line117"
+			},
+			"coordinates":	{
+				"x":	94,
+				"y":	117,
+				"width":	65,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+   "protocol": "http",
+   "server": "IL-Ylavi.MSE.Corp",
+   "requester": "MagicScripts412/MGrqispi.dll",
+   "appname": "UiExpert",
+   "LogClientSequenceForActivityMonitor": "N",
+   "InternalLogLevel": "",
+   "InternalLogSync": "Message",
+   "DisplayGenericError": "N",
+   "FirstHTTPRequestTimeout": "5"
+}
