@@ -22,7 +22,7 @@
       <OutputFolder val="%Web_Application_Folder%"/>
       <SourceImagesFolder val=".\images"/>
       <Theme val="Material Design"/>
-      <GenerateMetadataOnly val="N"/>
+      <GenerateMetadataOnly val="Y"/>
       <MultiLingualSupport val="N"/>
       <StartupProgramISN val="33554462"/>
       <UseWorkspace val="N"/>
