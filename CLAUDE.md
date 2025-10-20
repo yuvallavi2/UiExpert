@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 UiExpert is a hybrid application built with Magic XPA (low-code platform) and Angular 19. The project uses Magic XPA's code generation capabilities to create Angular components from metadata, with a SQLite database backend.
 
+⚠️  **BEFORE STARTING ANY WORK - READ AND ACKNOWLEDGE THESE CRITICAL RULES:**
+  - !Never update any files in the Source folder 
+  - Yoc can only change TS, HTML, and CSS files that are part of Angular components 
+
 ## Architecture
 
 ### Dual-Layer Structure
