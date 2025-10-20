@@ -29,7 +29,6 @@ Start.lnk
 /Angular/UiExpert/dist
 /Angular/UiExpert/.angular/cache
 /Angular/UiExpert/tmp
-/Angular/UiExpert/magic-metadata/
 Angular/node_modules/
 
 # Angular - Package lock (optional - remove if you want to track it)
@@ -63,5 +62,3 @@ yarn-error.log*
 .env.local
 .env.*.local
 
-Angular/UiExpert/magic-metadata/config.json
-C:\XpaProjects\UiExpert\Angular\UiExpert\magic-metadata\config.json
