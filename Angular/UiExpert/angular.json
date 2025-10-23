@@ -34,6 +34,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "tailwind.config.js",
+                "input": "src",
+                "output": "/"
               }
             ],
             "styles": [
