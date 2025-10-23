@@ -1,50 +1,20 @@
-# Eventit UI Guidelines – Developer README
+# UI Developer README
 
-This short guide explains **how to use the Tailwind config** provided in `eventit-ui-guidelines.md`.
+Quick usage notes for developers.
 
----
+## Class Cheatsheet
+- Buttons: `btn-primary` / `btn-secondary` / `btn-ghost`
+- Card: `card`
+- Badge: `badge-*`
+- Inputs: `input`
+- Table: `table`
+- Sidebar: `sidebar`
+- Heading: `heading`
+- RTL: add `.rtl` on a parent container (we default to RTL in examples)
 
-## 🎨 Design Tokens
-- **Backgrounds:** `eventit-bg-primary`, `eventit-bg-secondary`, `eventit-bg-hover`
-- **Text:** `eventit-text-primary`, `eventit-text-secondary`, `eventit-text-placeholder`
-- **Status Colors:** `eventit-success`, `eventit-info`, `eventit-danger`, `eventit-warning`
+## Semantic Color Tokens
+Use Tailwind tokens (e.g., `bg-primary`, `text-foreground`, `border-border`) or the raw CSS vars (`var(--color-primary)`) when writing custom CSS.
 
-These are applied through component classes, so you don’t need to call them directly.
+## Examples
+Open any HTML in `/examples/` to see live patterns. Each file is copy‑paste ready into an Angular template.
 
----
-
-## 🧩 Components
-
-### Buttons
-- **Primary:** `btn btn-primary` → green call‑to‑action
-- **Danger:** `btn btn-danger` → red destructive action
-- **Ghost:** `btn btn-ghost` → subtle outline action
-
-### Cards
-- Use the `card` class for panels and containers.
-
-### Inputs
-- Use `input` for form fields (text, date, select).
-
-### Tables
-- Apply the `table` class to a `<table>`.
-- Headers and rows are styled automatically.
-
-### Badges
-- `badge badge-success` → Active/Completed  
-- `badge badge-info` → Scheduled/Upcoming  
-- `badge badge-danger` → Cancelled/Inactive  
-- `badge badge-warning` → Optional alerts
-
-### Sidebar Items
-- `sidebar-item` → default
-- `sidebar-item-active` → highlighted (green background, white text)
-
----
-
-## 🚀 Usage Workflow
-1. Import the Tailwind config in your Angular project.
-2. Reference this README for semantic class usage.
-3. Agents should **never hardcode styles**—always rely on these classes.
-
-By following these rules, all AI‑generated UI components will stay visually consistent.
