@@ -1,0 +1,55 @@
+[
+	{
+		"module_name":	"",
+		"routesArray":	[
+			{
+				"RouteName":	"welcome",
+				"ModuleName":	"",
+				"OutletName":	"",
+				"children":	null
+			},
+			{
+				"RouteName":	"MList",
+				"ModuleName":	"",
+				"OutletName":	"",
+				"children":	null
+			},
+			{
+				"RouteName":	"MCard",
+				"ModuleName":	"",
+				"OutletName":	"",
+				"children":	null
+			},
+			{
+				"RouteName":	"MContact",
+				"ModuleName":	"",
+				"OutletName":	"",
+				"children":	null
+			},
+			{
+				"RouteName":	"EventCard",
+				"ModuleName":	"",
+				"OutletName":	"",
+				"children":	null
+			},
+			{
+				"RouteName":	"RegisteredMembers",
+				"ModuleName":	"",
+				"OutletName":	"",
+				"children":	null
+			},
+			{
+				"RouteName":	"EventList",
+				"ModuleName":	"",
+				"OutletName":	"",
+				"children":	null
+			},
+			{
+				"RouteName":	"MemberSelection",
+				"ModuleName":	"",
+				"OutletName":	"",
+				"children":	null
+			}
+		]
+	}
+]

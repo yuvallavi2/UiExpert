@@ -5,7 +5,8 @@
       "Bash(test:*)",
       "Bash(claude-code --version)",
       "Read(//home/ylavi/.config/**)",
-      "Read(//home/ylavi/**)"
+      "Read(//home/ylavi/**)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": [],

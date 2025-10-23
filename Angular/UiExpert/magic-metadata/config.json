@@ -1,8 +1,8 @@
 {
-	"create_route_map":	false,
+	"create_route_map":	true,
 	"create_new_project":	false,
 	"created_menu":	false,
-	"created_views":	true,
+	"created_views":	false,
 	"theme":	"material",
 	"output_folder":	"C:\\XpaProjects\\UiExpert\\Angular\\",
 	"backup_current":	false,
@@ -11,23 +11,6 @@
 	"exposed_functionality":	true,
 	"allow_testing":	false,
 	"project_name":	"UiExpert",
-	"web_modules":	[
-		{
-			"module_name":	"",
-			"load_on_demand":	false,
-			"form_files":	[
-				"Events/EventCard/EventCard",
-				"Events/RegisteredMembers/RegisteredMembers",
-				"Events/EventList/EventList",
-				"Events/MemberSelection/MemberSelection",
-				"Members/MList/MList",
-				"Members/MCard/MCard",
-				"Members/MContact/MContact",
-				"mainWC/StartProgram/StartProgram",
-				"mainWC/StartProgram/UserDropdown/UserDropdown",
-				"mainWC/Welcome/Welcome"
-			]
-		}
-	],
+	"web_modules":	null,
 	"controls_accessor_only":	false
 }
