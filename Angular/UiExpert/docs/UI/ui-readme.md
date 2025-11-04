@@ -1,20 +1,18 @@
-# UI Developer README
 
-Quick usage notes for developers.
+# 🧑‍💻 Developer UI README (Dark Theme)
 
-## Class Cheatsheet
-- Buttons: `btn-primary` / `btn-secondary` / `btn-ghost`
-- Card: `card`
-- Badge: `badge-*`
-- Inputs: `input`
-- Table: `table`
-- Sidebar: `sidebar`
-- Heading: `heading`
-- RTL: add `.rtl` on a parent container (we default to RTL in examples)
+### Using Tailwind classes
+All UI elements are styled using Tailwind CSS classes with **dark mode enabled**.  
+To apply dark mode globally, add the `dark` class to the `<html>` element.
 
-## Semantic Color Tokens
-Use Tailwind tokens (e.g., `bg-primary`, `text-foreground`, `border-border`) or the raw CSS vars (`var(--color-primary)`) when writing custom CSS.
+Example:
+```html
+<html class="dark">
+  <body class="bg-background text-text">...</body>
+</html>
+```
 
-## Examples
-Open any HTML in `/examples/` to see live patterns. Each file is copy‑paste ready into an Angular template.
-
+### Guidelines
+- Use consistent spacing, shadow, and rounded corners.
+- Dark backgrounds: use `bg-surface` or `bg-background`.
+- Text on dark: always use `text-text` or `text-muted`.

@@ -1,28 +1,36 @@
-# SETUP (Angular + Tailwind)
 
-1. **Install Tailwind** in your Angular project (v16+):
+# ⚙️ Setup Instructions (Dark Theme Angular Project)
+
+1. **Install Tailwind CSS**
    ```bash
-   ng add @ngneat/tailwind
-   # or manual install per Tailwind docs
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init
    ```
 
-2. **Copy files** from this package into your repo:
-   - `UI/config/tailwind.config.js` → replace/merge with your project's Tailwind config
-   - `UI/design-tokens.css` → import in `styles.scss` (or `styles.css`):
-     ```scss
-     @import 'UI/design-tokens.css';
+2. **Add Tailwind Directives**
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+3. **Enable Dark Mode**
+   - In `tailwind.config.js`, ensure:
+     ```js
+     darkMode: 'class',
      ```
-   - Optionally copy `/examples` and `/images` for references.
+   - Apply dark mode by toggling a class on the `<html>` or `<body>` tag:
+     ```js
+     document.documentElement.classList.toggle('dark');
+     ```
 
-3. **Enable RTL**:
-   - Add `dir="rtl"` and `.rtl` on `<body>` or app root container.
-   - In components, prefer flex/grid utilities that are RTL-safe.
+4. **Integrate into Angular**
+   - Update `angular.json`:
+     ```json
+     "styles": ["src/styles.css"]
+     ```
 
-4. **Use semantic classes**:
-   - Buttons: `<button class="btn-primary">שמירה</button>`
-   - Badges: `<span class="badge-success">פעיל</span>`
-   - Panels: `<div class="card">...</div>`
-
-5. **Build**:
-   Tailwind scans `./src/**/*.{html,ts}`; ensure the `content` globs in `tailwind.config.js` include your Angular paths alongside `/UI/examples/**/*.html` for local previews.
-
+5. **Run Build**
+   ```bash
+   npm run build
+   ```

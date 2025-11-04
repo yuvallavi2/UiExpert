@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventReg - Events Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0da6f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-gray-200">
+<div class="relative flex min-h-screen w-full">
+<aside class="flex h-screen w-64 flex-col bg-slate-900 border-r border-slate-800">
+<div class="flex flex-col grow p-4">
+<div class="flex items-center gap-3 px-3 py-2 mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="EventReg company logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGJjFxlpvKW-uY3UZ5Msl7-gtgFMYDv-1ds0IbNHuMInrAnf-9Yt122vFUakXnwtFZDbNTvk3lAUKUqvznx7ID4rLwxok6_8xcl-66lQWWnkdYnX7c8WUmwY5c-z7gZ0BUxWYK7gNFJfEZJbz4_kqbBT7rsRuJdaVBxfFDW7A9v6vKeF6aVOmyo5rg_CPMGDSMhg_jI9pRxryAYlNR8IrbNNv4SFnQvYXBtPN7rZ2gZ2U_wRQRtn0mhYjApcQpLKBZhhsklTvg4UA");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">EventReg</h1>
+<p class="text-gray-400 text-sm font-normal leading-normal">Management</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/30 text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<p class="text-sm font-medium leading-normal">Events</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Customers</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Analytics</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+<div class="p-4 border-t border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Logout</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Events</h1>
+<button class="flex min-w-[84px] items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 20px;">add_circle</span>
+<span class="truncate">Create New Event</span>
+</button>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+<div class="w-full md:max-w-md">
+<label class="flex flex-col h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-slate-900 border border-slate-800">
+<div class="text-gray-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-gray-500 px-2 text-base font-normal leading-normal" placeholder="Search by event name..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex gap-2">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-800 border border-slate-700 px-4">
+<p class="text-white text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-900 border border-slate-800 px-4 hover:bg-white/5">
+<p class="text-gray-300 text-sm font-medium leading-normal">Upcoming</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-900 border border-slate-800 px-4 hover:bg-white/5">
+<p class="text-gray-300 text-sm font-medium leading-normal">Past</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-900 border border-slate-800 px-4 hover:bg-white/5">
+<p class="text-gray-300 text-sm font-medium leading-normal">Drafts</p>
+</button>
+</div>
+<div class="flex gap-1 p-1 rounded-lg bg-slate-900 border border-slate-800">
+<button class="p-1.5 rounded-md bg-slate-800 text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">grid_view</span>
+</button>
+<button class="p-1.5 rounded-md text-gray-400 hover:bg-white/10">
+<span class="material-symbols-outlined" style="font-size: 20px;">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex flex-col bg-slate-900 rounded-xl border border-slate-800 shadow-sm overflow-hidden transition-shadow hover:shadow-lg hover:shadow-primary/10">
+<div class="p-5">
+<div class="flex justify-between items-start mb-3">
+<h3 class="text-lg font-bold text-white">Annual Tech Summit 2024</h3>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-900 text-green-300">Live</span>
+</div>
+<p class="text-sm text-gray-400 mb-4">October 26-28, 2024</p>
+<div class="flex items-center justify-between text-sm text-gray-300">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">group</span>
+<span>Registrations</span>
+</div>
+<span class="font-medium text-white">87 / 150</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 p-3 bg-slate-950 border-t border-slate-800">
+<button class="p-2 text-gray-400 hover:bg-gray-700 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+</button>
+<button class="p-2 text-gray-400 hover:bg-gray-700 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-900/50 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col bg-slate-900 rounded-xl border border-slate-800 shadow-sm overflow-hidden transition-shadow hover:shadow-lg hover:shadow-primary/10">
+<div class="p-5">
+<div class="flex justify-between items-start mb-3">
+<h3 class="text-lg font-bold text-white">Design Forward Conference</h3>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-900 text-orange-300">Draft</span>
+</div>
+<p class="text-sm text-gray-400 mb-4">November 15, 2024</p>
+<div class="flex items-center justify-between text-sm text-gray-300">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">group</span>
+<span>Registrations</span>
+</div>
+<span class="font-medium text-white">0 / 100</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 p-3 bg-slate-950 border-t border-slate-800">
+<button class="p-2 text-gray-400 hover:bg-gray-700 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+</button>
+<button class="p-2 text-gray-400 hover:bg-gray-700 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-900/50 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col bg-slate-900 rounded-xl border border-slate-800 shadow-sm overflow-hidden transition-shadow hover:shadow-lg hover:shadow-primary/10">
+<div class="p-5">
+<div class="flex justify-between items-start mb-3">
+<h3 class="text-lg font-bold text-white">Marketing Week 2023</h3>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-700 text-gray-300">Past</span>
+</div>
+<p class="text-sm text-gray-400 mb-4">May 05-07, 2023</p>
+<div class="flex items-center justify-between text-sm text-gray-300">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">group</span>
+<span>Registrations</span>
+</div>
+<span class="font-medium text-white">213 / 250</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 p-3 bg-slate-950 border-t border-slate-800">
+<button class="p-2 text-gray-400 hover:bg-gray-700 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+</button>
+<button class="p-2 text-gray-400 hover:bg-gray-700 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-900/50 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

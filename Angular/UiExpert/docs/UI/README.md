@@ -1,14 +1,11 @@
-# README
 
-This package contains a UI style system extracted from your screenshots, including:
-- Tailwind config with semantic tokens and components
-- CSS design tokens
-- Example Angular-compatible HTML templates
-- Markdown docs for designers & developers
+# 📘 General Instructions (Dark Theme)
 
-Folders:
-- `config/` — Tailwind config (`tailwind.config.js`)
-- `examples/` — sample components: dashboard, events list, members table, member profile, and a `style-guide.html`
-- `images/` — your uploaded screenshots (for reference)
-- Root docs — `ui-guidelines.md`, `ui-readme.md`, `SETUP.md`, `README.md`
+This package contains UI guidelines and Tailwind configuration for a dark theme Angular project.
 
+Includes:
+- Tailwind config with dark color tokens
+- UI component examples
+- Developer & setup documentation
+
+For full documentation, visit: [Tailwind CSS Docs](https://context7.com/websites/tailwindcss)

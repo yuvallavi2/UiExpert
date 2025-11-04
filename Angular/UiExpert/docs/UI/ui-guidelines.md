@@ -1,58 +1,44 @@
-# UI Guidelines
 
-These guidelines were generated from your uploaded screens. Colors are mapped to semantic roles and exposed as **CSS variables** + **Tailwind tokens**.
+# 🌙 UI Guidelines (Dark Theme)
 
 ## Design Tokens
+- **Primary Color:** #3b82f6
+- **Secondary Color:** #64748b
+- **Success:** #22c55e
+- **Warning:** #f59e0b
+- **Danger:** #ef4444
+- **Background:** #0f172a
+- **Surface:** #1e293b
+- **Text Color:** #f1f5f9
 
-### Colors
-- primary: `#fefeff`
-- secondary: `#fcfdfe`
-- info: `#fcfdfd`
-- success: `#f8f9fa`
-- warning: `#d8d9db`
-- danger: `#97a294`
-- foreground: `#0f172a`
-- background: `#f8fafc`
-- muted: `#94a3b8`
-- border: `#e2e8f0`
-- card: `#ffffff`
-
-### Radius
-- sm: `var(--radius-sm)`
-- md (default): `var(--radius-md)`
-- lg: `var(--radius-lg)`
-
-### Shadows
-- sm: `var(--shadow-sm)`
-- md: `var(--shadow-md)`
-- lg: `var(--shadow-lg)`
-
-### Typography
-- Base stack: `var(--font-sans)` → Heebo/Assistant/Segoe UI/Inter/system-ui
-- Sizes: use Tailwind scale (`text-sm`, `text-base`, `text-lg`, `text-xl`, `text-2xl`, etc.)
-- RTL: add `.rtl` on `<body>` or container.
-
-### Spacing
-Use Tailwind spacing scale with our helpers in `design-tokens.css` as needed.
+## Typography
+- **Font Family:** Inter, sans-serif
+- **Base Size:** 16px
+- **Weights:** 400 / 500 / 700
 
 ## Components
-
 ### Buttons
-- `.btn-primary`, `.btn-secondary`, `.btn-ghost`
+```html
+<button class="bg-primary text-white font-medium px-4 py-2 rounded-xl hover:bg-blue-600">Primary</button>
+```
 
 ### Cards
-- `.card` for panels, metric tiles and content blocks
-
-### Badges
-- `.badge-info`, `.badge-success`, `.badge-warning`, `.badge-danger`
-
-### Forms
-- `.input` for text inputs; compose with grid utilities for layout
+```html
+<div class="bg-surface text-text rounded-xl p-4 shadow border border-slate-700">
+  <h3 class="font-semibold text-lg mb-2">Card Title</h3>
+  <p class="text-muted">Dark mode card example content...</p>
+</div>
+```
 
 ### Tables
-- `.table` with separated rows
+```html
+<table class="min-w-full border-collapse bg-surface text-text">
+  <thead class="bg-slate-800 text-gray-300">
+    <tr><th class="p-2 text-left">Name</th><th>Status</th></tr>
+  </thead>
+  <tbody><tr><td class="p-2">Example</td><td><span class="text-success">Active</span></td></tr></tbody>
+</table>
+```
 
-### Sidebar
-- `.sidebar` for secondary info panes
-
-See `/examples/style-guide.html` and specific component examples for usage patterns resembling your screens (Dashboard, Events List, Members Table, Member Profile).
+### Layout
+Use padding and spacing with `p-4`, `p-6`, `space-y-4`, and ensure proper visual hierarchy.

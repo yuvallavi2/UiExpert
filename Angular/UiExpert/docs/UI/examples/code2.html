@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0da6f2",
+              "background-light": "#f5f7f8",
+              "background-dark": "#101c22",
+              "card-dark": "#1a272f",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 px-4 md:px-10 py-4">
+<div class="flex items-center gap-4 text-gray-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_319)">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">EventMaster</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">About</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Contact</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Log In</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-8 md:pt-12">
+<div class="px-4 py-3">
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[260px] md:min-h-[320px]" data-alt="Abstract vibrant gradient background for a tech summit banner" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCfiGJm7QzJJhDsw0DMbC3lODR1k4kx29p3tJpuHyFGHSRD8BhoLQTAsEK9kqyNvDk_sqZ9-pVzJeI3--7e7PrUBwghmXgl_vYFagd6jyf9tj56xw1CmU9erq5W1Wfpal26at3R_yD8mIsaiZe9Z3E84DrX2NNAyVQ_zZXxq3sWtKOXb9g7C2VM90mLlhi0xziB2I3VLtptJMQ60JKkwUha_R4t01M-E3uenFzb8KfuuBe-YdHTpoVB30-y9fwSc-3RNbWoES5RrM");'>
+<div class="flex flex-col gap-2 p-6 md:p-8">
+<h1 class="text-white tracking-tight text-4xl md:text-5xl font-bold leading-tight">Annual Tech Summit 2024</h1>
+<p class="text-white/90 text-lg font-normal leading-normal">
+                                        Join us on December 15th, 2024 at the Grand Convention Center for a day of innovation and networking.
+                                    </p>
+</div>
+</div>
+</div>
+<div class="mt-8 md:mt-12 bg-white dark:bg-card-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="p-6 md:p-8">
+<div class="flex flex-wrap justify-between gap-3 pb-6 border-b border-gray-200 dark:border-gray-800">
+<div class="flex flex-col gap-2">
+<p class="text-gray-900 dark:text-white tracking-light text-2xl md:text-3xl font-bold leading-tight">Register for the Event</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Fill in your details below to secure your spot. Fields marked with an asterisk (*) are required.</p>
+</div>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6 pt-6">
+<div class="flex flex-col">
+<label class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300" for="fullName">Full Name *</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 focus:border-primary h-12 px-4 text-base font-normal leading-normal placeholder:text-gray-400 dark:placeholder:text-gray-500" id="fullName" placeholder="Enter your full name" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300" for="emailAddress">Email Address *</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 focus:border-primary h-12 px-4 text-base font-normal leading-normal placeholder:text-gray-400 dark:placeholder:text-gray-500" id="emailAddress" placeholder="you@example.com" type="email" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300" for="companyName">Company Name</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 focus:border-primary h-12 px-4 text-base font-normal leading-normal placeholder:text-gray-400 dark:placeholder:text-gray-500" id="companyName" placeholder="Your company name" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300" for="jobTitle">Job Title</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 focus:border-primary h-12 px-4 text-base font-normal leading-normal placeholder:text-gray-400 dark:placeholder:text-gray-500" id="jobTitle" placeholder="e.g., Software Engineer" value=""/>
+</div>
+<div class="md:col-span-2">
+<label class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300" for="questions">Questions for the Speaker</label>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 focus:border-primary p-4 text-base font-normal leading-normal placeholder:text-gray-400 dark:placeholder:text-gray-500" id="questions" placeholder="Ask anything you're curious about..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 flex items-start gap-3">
+<input class="form-checkbox mt-1 size-4 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 dark:checked:bg-primary" id="terms" type="checkbox"/>
+<div class="flex flex-col">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="terms">I agree to the <a class="text-primary hover:underline" href="#">Terms and Conditions</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a>.</label>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">You must agree to the terms to complete registration.</p>
+</div>
+</div>
+<div class="md:col-span-2 mt-4 flex justify-end border-t border-gray-200 dark:border-gray-800 pt-6">
+<button class="flex w-full md:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed">
+<span class="truncate">Register Now</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<footer class="mt-16 text-center text-sm text-gray-500 dark:text-gray-400 py-6 border-t border-gray-200 dark:border-gray-800">
+<div class="flex items-center justify-center gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Contact Us</a>
+</div>
+<p class="mt-4">© 2024 EventMaster. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
