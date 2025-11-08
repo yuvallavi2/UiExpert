@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "japanese-business-app-login-screen",
+    "html": "japanese-business-app-login-screen.component.html",
+    "image": "japanese-business-app-login-screen.png",
+    "source_dir": "/mnt/data/ui_guidelines_pkg/source_input/stitch_japanese_business_app_login_screen/japanese_business_app_login_screen"
+  },
+  {
+    "slug": "dashboard-with-collapsible-menu",
+    "html": "dashboard-with-collapsible-menu.component.html",
+    "image": "dashboard-with-collapsible-menu.png",
+    "source_dir": "/mnt/data/ui_guidelines_pkg/source_input/stitch_japanese_business_app_login_screen/dashboard_with_collapsible_menu"
+  },
+  {
+    "slug": "japanese-business-app-create-event-screen",
+    "html": "japanese-business-app-create-event-screen.component.html",
+    "image": "japanese-business-app-create-event-screen.png",
+    "source_dir": "/mnt/data/ui_guidelines_pkg/source_input/stitch_japanese_business_app_login_screen/japanese_business_app_create_event_screen"
+  },
+  {
+    "slug": "japanese-business-app-update-event-screen",
+    "html": "japanese-business-app-update-event-screen.component.html",
+    "image": "japanese-business-app-update-event-screen.png",
+    "source_dir": "/mnt/data/ui_guidelines_pkg/source_input/stitch_japanese_business_app_login_screen/japanese_business_app_update_event_screen"
+  },
+  {
+    "slug": "japanese-business-app-member-list-screen-1",
+    "html": "japanese-business-app-member-list-screen-1.component.html",
+    "image": "japanese-business-app-member-list-screen-1.png",
+    "source_dir": "/mnt/data/ui_guidelines_pkg/source_input/stitch_japanese_business_app_login_screen/japanese_business_app_member_list_screen_1"
+  },
+  {
+    "slug": "japanese-business-app-member-list-screen-2",
+    "html": "japanese-business-app-member-list-screen-2.component.html",
+    "image": "japanese-business-app-member-list-screen-2.png",
+    "source_dir": "/mnt/data/ui_guidelines_pkg/source_input/stitch_japanese_business_app_login_screen/japanese_business_app_member_list_screen_2"
+  },
+  {
+    "slug": "japanese-business-app-event-list-screen-1",
+    "html": "japanese-business-app-event-list-screen-1.component.html",
+    "image": "japanese-business-app-event-list-screen-1.png",
+    "source_dir": "/mnt/data/ui_guidelines_pkg/source_input/stitch_japanese_business_app_login_screen/japanese_business_app_event_list_screen_1"
+  },
+  {
+    "slug": "japanese-business-app-event-list-screen-2",
+    "html": "japanese-business-app-event-list-screen-2.component.html",
+    "image": "japanese-business-app-event-list-screen-2.png",
+    "source_dir": "/mnt/data/ui_guidelines_pkg/source_input/stitch_japanese_business_app_login_screen/japanese_business_app_event_list_screen_2"
+  }
+]

@@ -1,36 +1,34 @@
+# SETUP.md
 
-# ⚙️ Setup Instructions (Dark Theme Angular Project)
+This guide explains how to wire Tailwind + the generated tokens into an Angular app.
 
-1. **Install Tailwind CSS**
-   ```bash
-   npm install -D tailwindcss postcss autoprefixer
-   npx tailwindcss init
-   ```
+## 1) Install Tailwind
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
-2. **Add Tailwind Directives**
-   ```css
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
-   ```
+## 2) Replace your tailwind.config.js
+Use `UI/config/tailwind.config.js` or merge its `theme.extend` into your existing config.
 
-3. **Enable Dark Mode**
-   - In `tailwind.config.js`, ensure:
-     ```js
-     darkMode: 'class',
-     ```
-   - Apply dark mode by toggling a class on the `<html>` or `<body>` tag:
-     ```js
-     document.documentElement.classList.toggle('dark');
-     ```
+## 3) Global styles
+Import tokens in `src/styles.css` (or `.scss`):
+```css
+@import url('./UI/config/tokens.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-4. **Integrate into Angular**
-   - Update `angular.json`:
-     ```json
-     "styles": ["src/styles.css"]
-     ```
+## 4) Enable dark mode
+Add `class="dark"` on `<html>` (or toggle via a button) to switch themes.
 
-5. **Run Build**
-   ```bash
-   npm run build
-   ```
+## 5) Verify content scanning
+Ensure Tailwind `content` globs include your Angular templates:
+- `./src/**/*.{html,ts}`
+- `./UI/examples/**/*.html`
+
+## 6) Run the dev server
+```
+ng serve
+```

@@ -1,44 +1,42 @@
+# UI Guidelines
 
-# 🌙 UI Guidelines (Dark Theme)
+Derived from uploaded assets.
 
-## Design Tokens
-- **Primary Color:** #3b82f6
-- **Secondary Color:** #64748b
-- **Success:** #22c55e
-- **Warning:** #f59e0b
-- **Danger:** #ef4444
-- **Background:** #0f172a
-- **Surface:** #1e293b
-- **Text Color:** #f1f5f9
+## Color Tokens
+Top detected colors:
+- #131c27
+- #111a24
+- #111828
+- #121b24
+- #090e14
+- #15202c
+- #0a0e12
+- #1a2332
+- #23354f
+- #5c554e
+
+Tokens:
+```css
+:root {
+  --primary: hsl(213 34% 11%);
+  --secondary: hsl(212 36% 10%);
+  --accent: hsl(222 40% 11%);
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 4%);
+  --muted: hsl(220 5% 62%);
+}
+```
 
 ## Typography
-- **Font Family:** Inter, sans-serif
-- **Base Size:** 16px
-- **Weights:** 400 / 500 / 700
-
-## Components
-### Buttons
-```html
-<button class="bg-primary text-white font-medium px-4 py-2 rounded-xl hover:bg-blue-600">Primary</button>
+Primary font stack:
+```
+Manrope', 'Noto Sans JP', sans-serif, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, 'Apple Color Emoji','Segoe UI Emoji'
 ```
 
-### Cards
-```html
-<div class="bg-surface text-text rounded-xl p-4 shadow border border-slate-700">
-  <h3 class="font-semibold text-lg mb-2">Card Title</h3>
-  <p class="text-muted">Dark mode card example content...</p>
-</div>
-```
+## Components (examples)
+- Buttons: `.btn`, `.btn-primary`, `.btn-secondary`
+- Card: `.card`, `.card-header`, `.card-body`
+- Table: `.table`, `.table-header`, `.table-row`
+- Sidebar: `.sidebar`, `.sidebar-item`
 
-### Tables
-```html
-<table class="min-w-full border-collapse bg-surface text-text">
-  <thead class="bg-slate-800 text-gray-300">
-    <tr><th class="p-2 text-left">Name</th><th>Status</th></tr>
-  </thead>
-  <tbody><tr><td class="p-2">Example</td><td><span class="text-success">Active</span></td></tr></tbody>
-</table>
-```
-
-### Layout
-Use padding and spacing with `p-4`, `p-6`, `space-y-4`, and ensure proper visual hierarchy.
+See `/examples/style-guide.html` for a live showcase (uses CDN).

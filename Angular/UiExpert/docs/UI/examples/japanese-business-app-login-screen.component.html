@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ログイン - Business Application</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": {
+              light: "#2196f3", // A brighter blue for dark mode
+              DEFAULT: "#137fec",
+              dark: "#0b62b6"
+            },
+            "background-light": "#f6f7f8",
+            "background-dark": "#111827", // Dark gray / charcoal
+          },
+          fontFamily: {
+            "display": ["Manrope", "Noto Sans JP", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .form-checkbox {
+      --checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27white%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');
+    }
+  </style>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-background-dark p-4">
+<div class="w-full max-w-md space-y-8">
+<div class="flex flex-col items-center">
+<svg class="h-10 w-10 text-primary-light" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm14.024-.983a1.125 1.125 0 010 1.966l-5.603 3.113A1.125 1.125 0 019 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113z" fill-rule="evenodd"></path>
+</svg>
+<h1 class="mt-4 text-[32px] font-bold tracking-tight text-slate-100">ログイン</h1>
+</div>
+<div class="rounded-xl border border-slate-800 bg-slate-900 p-8 shadow-sm">
+<form class="space-y-6">
+<div>
+<label class="flex flex-col">
+<p class="pb-2 text-base font-medium text-slate-300">メールアドレス</p>
+<input class="form-input h-14 w-full flex-1 resize-none overflow-hidden rounded-lg border border-slate-700 bg-slate-800 p-4 text-base font-normal text-slate-100 placeholder:text-slate-500 focus:border-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light/30" placeholder="your.email@example.com" type="email" value=""/>
+</label>
+</div>
+<div>
+<label class="flex flex-col">
+<p class="pb-2 text-base font-medium text-slate-300">パスワード</p>
+<input class="form-input h-14 w-full flex-1 resize-none overflow-hidden rounded-lg border border-slate-700 bg-slate-800 p-4 text-base font-normal text-slate-100 placeholder:text-slate-500 focus:border-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light/30" placeholder="パスワードを入力してください" type="password" value=""/>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<label class="flex cursor-pointer items-center gap-x-3">
+<input class="form-checkbox h-5 w-5 rounded border-2 border-slate-600 bg-transparent text-primary-light checked:border-primary-light checked:bg-primary-light checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary-light" type="checkbox"/>
+<p class="text-base font-normal text-slate-300">ログイン状態を保持する</p>
+</label>
+</div>
+<div>
+<button class="flex h-12 w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary-light px-5 text-base font-bold leading-normal tracking-[0.015em] text-white transition-colors hover:bg-primary-light/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2">
+<span class="truncate">ログイン</span>
+</button>
+</div>
+</form>
+<div class="mt-6 text-center">
+<a class="text-sm font-medium text-primary-light hover:underline" href="#">パスワードを忘れた場合</a>
+</div>
+</div>
+</div>
+</div>
+</body></html>

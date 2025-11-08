@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>イベント一覧</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Manrope', 'Noto Sans JP', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "danger": "#ef4444",
+            },
+            fontFamily: {
+              "display": ["Manrope", "Noto Sans JP", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5 md:px-10 lg:px-20 xl:px-40">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">アプリのロゴ</h2>
+</div>
+<div class="flex flex-1 justify-end gap-2 sm:gap-4">
+<div class="flex items-center gap-2 sm:gap-4">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-white/10 text-white/80 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-white/10 text-white/80 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture, abstract purple and blue gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDi_LvH3ja4mR9UxY2Cy3BBTEwX261LidOoxUW48gP05wGGSkM5NDaCN0QbK6tj8uMddkgZzp7Lb0iEkhs1AAZZtHiY7pdtpYc9kMrx6aLRZ1Rw8am1H4y3NyuGN9ToZgPeMGWngp75R_FE1csvuUfVGTNXuRPHiDa5rUQYGUwMDU_3sW9qs2sME3UMKdLy9da8QW84aagnVIBleab9qD9KsBCEOtTJINLWOH9BjvoOjEzWgMdw3WGQfNBNvHRM0r5aFxU98MhjsG2o");'></div>
+</div>
+</header>
+<main class="flex flex-col gap-6 p-4 sm:p-6 lg:p-8" id="main-content">
+<div class="flex flex-wrap justify-between gap-4">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">イベント一覧</h1>
+</div>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-white/50">search</span>
+</div>
+<input class="w-full rounded-lg border-0 bg-[#18232f] p-3 pl-10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:ring-inset" placeholder="イベントを検索..." type="search"/>
+</div>
+<div class="flex flex-col gap-6">
+<div class="p-6 bg-[#18232f] rounded-xl @container transition-all hover:bg-[#1f2c3a] border border-transparent hover:border-primary/30">
+<div class="flex flex-col gap-4 @lg:flex-row @lg:items-start @lg:gap-6">
+<div class="w-full @lg:w-1/3 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract image for a quarterly performance report meeting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANFRgrVYKyLgF6j5WIz5BRQIDzXP-B4JeLmFK6w9PcLtOCGbM72ZauQxp2qb0CwbMFt1cEoHmoJVGxtN5xmPoWD1dLHlh5PayaZUWS1OFhuNYAErFv7pZuxX_6qz8XC7oJY8im8pU8evEL_J5VgRRNnXT1Q15PPe7tmItjWeGVZUvsLYoGDCPJeqgB-U8GnObvFrQ8bR0Vyaf9WNF6kjQGALLQUe7EJhHSzI_KF9v6n0i1wxoWRNuP5YFdt8lwbL6TTREeNnLepCAq");'></div>
+<div class="flex w-full min-w-0 grow flex-col items-stretch justify-center gap-3">
+<p class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">四半期業績報告会</p>
+<div class="flex flex-col gap-3 @md:flex-row @md:items-end @md:justify-between">
+<div class="flex flex-col gap-2">
+<p class="text-[#92adc9] text-sm font-normal leading-normal flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_month</span>2023年10月26日</p>
+<p class="text-white/80 text-base font-normal leading-relaxed">当四半期の業績に関する詳細な報告と次四半期の見通しについての会議です。</p>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<button class="flex min-w-[100px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal transition-opacity hover:opacity-80">
+<span class="truncate">詳細を見る</span>
+</button>
+<button class="flex min-w-[80px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-danger text-white text-sm font-bold leading-normal transition-opacity hover:opacity-80" onclick="document.getElementById('delete-modal').classList.remove('hidden')">
+<span class="truncate">削除</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-[#18232f] rounded-xl @container transition-all hover:bg-[#1f2c3a] border border-transparent hover:border-primary/30">
+<div class="flex flex-col gap-4 @lg:flex-row @lg:items-start @lg:gap-6">
+<div class="w-full @lg:w-1/3 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract image for a new product launch event" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmYQx1vefnlfKdWTZ_M4Jhr2UIx9nD_pMfnMGvL1rHroJm7eZ3ybADSpgb0kAs0JITKirQyOlrPL2bEdRo2O7AGw9aSBRPSETAXUmi5PuT06pzSpZJtZX-GJupujQ5HrWqbl7zHu3T5IEr7d6eufOTiy_feM6qhx-uNQx5zeNwtVqdMrXjwxA6IJxH7ng099s8eCG1Xts2hjMtJn-1I4y_FqLIR8dMmUYhMnNU7271AaKN-L3Qxkx9s66o8HxLrvkb6-LYUb9kQIva");'></div>
+<div class="flex w-full min-w-0 grow flex-col items-stretch justify-center gap-3">
+<p class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">新製品ローンチイベント</p>
+<div class="flex flex-col gap-3 @md:flex-row @md:items-end @md:justify-between">
+<div class="flex flex-col gap-2">
+<p class="text-[#92adc9] text-sm font-normal leading-normal flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_month</span>2023年11月15日</p>
+<p class="text-white/80 text-base font-normal leading-relaxed">革新的な新製品の発表会です。デモンストレーションとネットワーキングの機会もございます。</p>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<button class="flex min-w-[100px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal transition-opacity hover:opacity-80">
+<span class="truncate">詳細を見る</span>
+</button>
+<button class="flex min-w-[80px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-danger text-white text-sm font-bold leading-normal transition-opacity hover:opacity-80" onclick="document.getElementById('delete-modal').classList.remove('hidden')">
+<span class="truncate">削除</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-[#18232f] rounded-xl @container transition-all hover:bg-[#1f2c3a] border border-transparent hover:border-primary/30">
+<div class="flex flex-col gap-4 @lg:flex-row @lg:items-start @lg:gap-6">
+<div class="w-full @lg:w-1/3 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract image for a year-end employee meeting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkDZdGCWhxs6HxRBlov3ozFF_2Tf1jHhytDE80VWT0uA7eodDToo5jwJmC4pi1RtxE1i-1LTyw6QIHPrzBr8-HNtNKW89xLgTLl1ShLW9aTjxlpeJf5ngsfc33cy5WOb38wrBjiZobfz38ReGjtskgqxHNTT_K1YqdPQ_hRXwiu8Qfy6L2FwJbWBr5jJJ-EBQYbMjy1j6xf0ATk4oBhOeapirDvlCLXPDVAjQtpsTzdT1QoPUIrHb5EW3WhlLtr57XrR5SFn4Ryy99");'></div>
+<div class="flex w-full min-w-0 grow flex-col items-stretch justify-center gap-3">
+<p class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">年末社員総会</p>
+<div class="flex flex-col gap-3 @md:flex-row @md:items-end @md:justify-between">
+<div class="flex flex-col gap-2">
+<p class="text-[#92adc9] text-sm font-normal leading-normal flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_month</span>2023年12月20日</p>
+<p class="text-white/80 text-base font-normal leading-relaxed">一年間の成果を祝い、来年の目標を共有するための全社員参加の総会です。</p>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<button class="flex min-w-[100px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal transition-opacity hover:opacity-80">
+<span class="truncate">詳細を見る</span>
+</button>
+<button class="flex min-w-[80px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-danger text-white text-sm font-bold leading-normal transition-opacity hover:opacity-80" onclick="document.getElementById('delete-modal').classList.remove('hidden')">
+<span class="truncate">削除</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+<div class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm" id="delete-modal">
+<div class="w-full max-w-md rounded-xl bg-[#18232f] p-6 text-center shadow-lg">
+<div class="flex justify-center mb-4">
+<div class="flex items-center justify-center size-12 rounded-full bg-danger/10 text-danger">
+<span class="material-symbols-outlined">delete</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white mb-2">イベントの削除</h3>
+<p class="text-white/80 mb-6">本当にこのイベントを削除しますか？</p>
+<div class="flex justify-center gap-4">
+<button class="flex-1 rounded-lg h-10 px-5 bg-white/10 text-white/80 text-sm font-bold transition-colors hover:bg-white/20" onclick="document.getElementById('delete-modal').classList.add('hidden')">
+キャンセル
+</button>
+<button class="flex-1 rounded-lg h-10 px-5 bg-danger text-white text-sm font-bold transition-opacity hover:opacity-80" onclick="document.getElementById('delete-modal').classList.add('hidden')">
+はい、削除します
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

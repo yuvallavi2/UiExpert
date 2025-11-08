@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>イベント編集</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Noto+Sans+JP:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Manrope", "Noto Sans JP", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-white/10 px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-4">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">イベント管理</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">ダッシュボード</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">イベント一覧</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">設定</a>
+</div>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-white/10 text-white hover:bg-white/20 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">notifications</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-white/10 text-white hover:bg-white/20 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">help</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with a gradient background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRaXEchmgCFurAlM6LnMvzSId3SLzmSFkC0J8vsTqbyUl5qLCwqLZ7kx1epsFD1gGynWo5zt5h34G0d3FMzcDQPGY86LnxR6FIN7nf9fNmACx9HowAevliBmdN2izce1IxrXdaUG4NWjisHge_jQrwJT4MJLo5xxfvTnIzltjExDs8tkNsg4M4pVWzOzkhsVG2ehC16y0lknyg89sMZkXPai3e_0YS9DQImbyCV74vKSul7nSc2N6_HQyAX4rAL9_sYeDv00mm4K72");'></div>
+</div>
+</header>
+<main class="px-40 flex flex-1 justify-center py-10">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">イベント編集</p>
+</div>
+<div class="flex flex-col gap-6 p-4 mt-6">
+<div class="flex w-full flex-wrap items-end gap-4">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white/80 text-base font-medium leading-normal pb-2">イベント名</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white/5 focus:border-none h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal" value="四半期事業計画会議"/>
+</label>
+</div>
+<div class="flex flex-wrap items-end gap-6">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white/80 text-base font-medium leading-normal pb-2">日付</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white/5 focus:border-none h-14 placeholder:text-white/40 p-4 rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal" value="2024-08-15"/>
+<div class="text-white/60 flex border-none bg-white/5 items-center justify-center pr-4 rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+</div>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white/80 text-base font-medium leading-normal pb-2">場所</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white/5 focus:border-none h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal" value="東京本社、会議室A"/>
+</label>
+</div>
+<div class="flex w-full flex-wrap items-end gap-4">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white/80 text-base font-medium leading-normal pb-2">概要</p>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white/5 focus:border-none min-h-36 placeholder:text-white/40 p-4 text-base font-normal leading-normal">次四半期の戦略目標と主要な取り組みについて議論します。各部門からの進捗報告と、新しい市場機会に関するプレゼンテーションが含まれます。</textarea>
+</label>
+</div>
+<div class="flex justify-end gap-4 mt-8">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-white border border-white/30 hover:bg-white/10 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-6">キャンセル</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-primary text-white hover:bg-primary/90 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-6">イベントを更新</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,11 +1,9 @@
+# UI Guidelines Package (Angular + Tailwind)
 
-# 📘 General Instructions (Dark Theme)
+This package was generated from your uploaded HTML files and screenshots.  
+It includes Tailwind configuration, design tokens as CSS variables, example components, and developer docs.
 
-This package contains UI guidelines and Tailwind configuration for a dark theme Angular project.
-
-Includes:
-- Tailwind config with dark color tokens
-- UI component examples
-- Developer & setup documentation
-
-For full documentation, visit: [Tailwind CSS Docs](https://context7.com/websites/tailwindcss)
+**Highlights**
+- Design tokens in `config/tokens.css` + `config/tailwind.config.js`
+- Examples in `/examples`
+- All provided images under `/Images`

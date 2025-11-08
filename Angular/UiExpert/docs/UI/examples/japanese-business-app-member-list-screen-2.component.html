@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>メンバー一覧</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "surface-dark": "#192635",
+              "border-dark": "#233648",
+              "text-primary-dark": "#e0e6f0",
+              "text-secondary-dark": "#92adc9",
+            },
+            fontFamily: {
+              "display": ['Manrope', 'Noto Sans JP', 'sans-serif'],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid dark:border-border-dark px-6 sm:px-10 py-3 sticky top-0 z-10 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-text-primary-dark">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]">アプリロゴ</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4 sm:gap-6">
+<nav class="hidden sm:flex items-center gap-6">
+<a class="text-text-secondary-dark hover:text-text-primary-dark text-sm font-medium leading-normal" href="#">ダッシュボード</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">メンバー一覧</a>
+<a class="text-text-secondary-dark hover:text-text-primary-dark text-sm font-medium leading-normal" href="#">プロジェクト</a>
+<a class="text-text-secondary-dark hover:text-text-primary-dark text-sm font-medium leading-normal" href="#">設定</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 dark:bg-surface-dark dark:hover:bg-border-dark text-text-primary-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-text-secondary-dark text-xl">notifications</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 dark:bg-surface-dark dark:hover:bg-border-dark text-text-primary-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-text-secondary-dark text-xl">help_outline</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnAByR6bf0IRDOrQei-pOYNocgLJNw3cYYsYzuh_Zb1iXe7r3w2hev1JPUl3aBOCjZhjeBIxlU7dVifgdO6pIqMBjba_7z0kRK0VBuv8y2P39UwW36KfJNHybKV1KWut27sgtp3TdevXu1lNSJPxgxdc_BuV232f-PUAiBvh-BQXtdsMwOX93nvuQvGcN7OCrS9nylHZDJVgW9sfHSKOU9tbkoXq_3SsGXR6UdoDvVd_hLejNi3-z5KLJ7YKRvtqp-qnRV01gmw3Ca");'></div>
+</div>
+</header>
+<main class="px-4 sm:px-10 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col w-full max-w-6xl flex-1 gap-6">
+<div class="flex flex-wrap justify-between gap-4 items-center">
+<h1 class="text-text-primary-dark text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em]">メンバー一覧</h1>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-lg">person_add</span>
+<span class="truncate">メンバーを追加</span>
+</button>
+</div>
+<div class="flex flex-col gap-4 bg-background-light dark:bg-surface-dark rounded-xl border border-background-light dark:border-border-dark p-4">
+<div class="flex flex-col md:flex-row gap-3">
+<div class="flex-1">
+<label class="flex flex-col min-w-40 h-11 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-secondary-dark flex border-none bg-background-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-text-primary-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-background-dark h-full placeholder:text-text-secondary-dark px-4 pl-2 text-sm font-normal leading-normal" placeholder="氏名またはメールアドレスで検索" value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3">
+<button class="flex h-11 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-dark pl-4 pr-3 text-sm font-medium leading-normal text-text-primary-dark hover:bg-border-dark">
+<span>役職: 全て</span>
+<span class="material-symbols-outlined text-lg text-text-secondary-dark">arrow_drop_down</span>
+</button>
+<button class="flex h-11 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-dark pl-4 pr-3 text-sm font-medium leading-normal text-text-primary-dark hover:bg-border-dark">
+<span>ステータス: 全て</span>
+<span class="material-symbols-outlined text-lg text-text-secondary-dark">arrow_drop_down</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-border-dark">
+<tr>
+<th class="p-4 text-xs font-bold uppercase text-text-secondary-dark tracking-wider">氏名</th>
+<th class="p-4 text-xs font-bold uppercase text-text-secondary-dark tracking-wider">メールアドレス</th>
+<th class="p-4 text-xs font-bold uppercase text-text-secondary-dark tracking-wider">役職</th>
+<th class="p-4 text-xs font-bold uppercase text-text-secondary-dark tracking-wider">ステータス</th>
+<th class="p-4 text-xs font-bold uppercase text-text-secondary-dark tracking-wider">アクション</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark">
+<tr class="hover:bg-background-dark/50">
+<td class="p-4 text-sm font-medium text-text-primary-dark whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Avatar for 山田 太郎" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8Jcgztym-dHQT3b2hJfxRk2d0IxAx9KmIWzi9RpPWJm8DWnsCl78xCUczIw3nqZoonL77k7e4FIaBS_kllZGxXq7FbrAeJme8ejt2UVSYemnoSnvnGWyafLgCfjV6b6LU9w9eEDSP67wsDjQsqZA3kk66yzQTXcAuH1GKTqrchonV7bojxHl7QXOM6AfyWvDlSiinbqjvMR6K1eM8lXWhDY1Ob4impltB43TzxWE19VT4gyHC4AeN8Ms__dmYJNfjY3aMoJCyJBxM");'></div>
+<span>山田 太郎</span>
+</div>
+</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">taro.yamada@example.com</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">管理者</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-0.5 text-xs font-medium text-green-400">
+<span class="size-1.5 rounded-full bg-green-400"></span>
+                                                アクティブ
+                                            </div>
+</td>
+<td class="p-4 text-sm text-text-primary-dark whitespace-nowrap"><button class="flex items-center justify-center h-8 px-3 rounded-md text-sm font-medium text-red-400 bg-red-500/10 hover:bg-red-500/20">削除</button></td>
+</tr>
+<tr class="hover:bg-background-dark/50">
+<td class="p-4 text-sm font-medium text-text-primary-dark whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Avatar for 鈴木 花子" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApv4QVVPok-EMh0xTugsoI88kkCtmxJ8l_I22WZ9SuY0s61lz6R7h88kjxIuBpeNEIdDnY_BxH5x-6miDWRYRxkpLt-AskAxrAEcq8FE3qKWQ3BWs9-IAh9LY4_ZZDCEO0-tBHwmRCJDxMs7HSlcd3gy-AfvnlW3fUC8ogrSme1P2EntJl6YBjNiP3Zh0rDKrj6OyIg-vMyBwg2Ikpg_mYW-RU63Z4XbgvOJFx1r3ac51Swu15nx1CkL8zTZT9FrvcXEhymGxgWRSp");'></div>
+<span>鈴木 花子</span>
+</div>
+</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">hanako.suzuki@example.com</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">編集者</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-0.5 text-xs font-medium text-green-400">
+<span class="size-1.5 rounded-full bg-green-400"></span>
+                                                アクティブ
+                                            </div>
+</td>
+<td class="p-4 text-sm text-text-primary-dark whitespace-nowrap"><button class="flex items-center justify-center h-8 px-3 rounded-md text-sm font-medium text-red-400 bg-red-500/10 hover:bg-red-500/20">削除</button></td>
+</tr>
+<tr class="hover:bg-background-dark/50">
+<td class="p-4 text-sm font-medium text-text-primary-dark whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Avatar for 佐藤 健太" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACoYCp58S3pU27S_7my6g_wvFRr4fUW4ZFUIEepWnKUfU8aiBm23Ok6jMNaGKqbLjV8BgAPfmso143CaKcqUnOY-culwbRIp7Jy1xJXtYinc5CwZgAnL0tL2yIiOpUJCf_t5U_heS9WdGJFgvIiVNInXjU7o73ZntUTXHe3jehJYbjvBc9gPoZYm58ogEr_h2ju_sk953oopElgjYMyxKIdQqaQ71OZW1kZCdnJJAcJ2Lt9VAli-mBdP4wssAH6sdp8ywC5nzmL9sv");'></div>
+<span>佐藤 健太</span>
+</div>
+</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">kenta.sato@example.com</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">閲覧者</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 rounded-full bg-gray-500/10 px-2 py-0.5 text-xs font-medium text-gray-400">
+<span class="size-1.5 rounded-full bg-gray-400"></span>
+                                                無効
+                                            </div>
+</td>
+<td class="p-4 text-sm text-text-primary-dark whitespace-nowrap"><button class="flex items-center justify-center h-8 px-3 rounded-md text-sm font-medium text-red-400 bg-red-500/10 hover:bg-red-500/20">削除</button></td>
+</tr>
+<tr class="hover:bg-background-dark/50">
+<td class="p-4 text-sm font-medium text-text-primary-dark whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Avatar for 高橋 美咲" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAX7m5gwDdwHndqAmYoK85M0wreik2niCkqK3PtmgM2CmGQm2B1WhaY-F9YLMsVNSD_c-2Fl_VCzRbMguMUB5QurrFuM8xDa-XzldEq1sK7vNajBiObY1jlvWKrn5ygv5uHyUhCrPysUybB_vaD9N4QSfuHQIrRZT7hvqxuU3Q-oOQwAKLasox7HUctF1Z5Av76mholgjHBFObrAQC9YHGk3_SLogF5teLxcTaOVc9CSeMr7EY3ECfbev_wK99Dyek4CIgINBpgC_mO");'></div>
+<span>高橋 美咲</span>
+</div>
+</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">misaki.takahashi@example.com</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">編集者</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-0.5 text-xs font-medium text-green-400">
+<span class="size-1.5 rounded-full bg-green-400"></span>
+                                                アクティブ
+                                            </div>
+</td>
+<td class="p-4 text-sm text-text-primary-dark whitespace-nowrap"><button class="flex items-center justify-center h-8 px-3 rounded-md text-sm font-medium text-red-400 bg-red-500/10 hover:bg-red-500/20">削除</button></td>
+</tr>
+<tr class="hover:bg-background-dark/50">
+<td class="p-4 text-sm font-medium text-text-primary-dark whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Avatar for 田中 一郎" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDT_4wo6-q_p8IqlEkoM4n9vEm1Pe_KMLMnQk_IcltjmnycNHuZ-fOUnf2QddXoRBCiEZ62qsHgHfZtSspUlk0HLqeEjgO7VGROT7re4ptLVclzYNe30W2hpOam3XeuQibNRXHn1J5jfzqD6VbcMiDA7DdKCh3jL_NV1tTmOxPMZfHUMfIJvz_H2TJDB6yCYyPg3F_JtVqx_gcFReOzHyPl7WTfARMo4tKd1W2Hp880B3wexXlH6pnihZsXJbiRyfM6a52CYz6uo9_p");'></div>
+<span>田中 一郎</span>
+</div>
+</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">ichiro.tanaka@example.com</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">閲覧者</td>
+<td class="p-4 text-sm text-text-secondary-dark whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-0.5 text-xs font-medium text-green-400">
+<span class="size-1.5 rounded-full bg-green-400"></span>
+                                                アクティブ
+                                            </div>
+</td>
+<td class="p-4 text-sm text-text-primary-dark whitespace-nowrap"><button class="flex items-center justify-center h-8 px-3 rounded-md text-sm font-medium text-red-400 bg-red-500/10 hover:bg-red-500/20">削除</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3 border-t border-border-dark">
+<p class="text-sm text-text-secondary-dark">10件中5件を表示中</p>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center h-9 px-3 rounded-lg border border-border-dark bg-background-dark text-sm font-medium text-text-primary-dark hover:bg-border-dark disabled:opacity-50" disabled="">前へ</button>
+<button class="flex items-center justify-center h-9 px-3 rounded-lg border border-border-dark bg-background-dark text-sm font-medium text-text-primary-dark hover:bg-border-dark">次へ</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4" id="delete-modal">
+<div class="w-full max-w-md rounded-xl bg-surface-dark border border-border-dark p-6 flex flex-col gap-6">
+<div class="flex flex-col gap-2 text-center">
+<h3 class="text-xl font-bold text-text-primary-dark">メンバーを削除</h3>
+<p class="text-text-secondary-dark text-sm">本当にこのメンバーを削除しますか？<br/>この操作は取り消せません。</p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center h-10 px-4 rounded-lg text-sm font-bold bg-border-dark text-text-primary-dark hover:bg-border-dark/80">キャンセル</button>
+<button class="flex items-center justify-center h-10 px-4 rounded-lg text-sm font-bold bg-red-600 text-white hover:bg-red-700">はい、削除します</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>
