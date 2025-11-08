@@ -1,0 +1,20 @@
+[
+	{
+		"programName":	"EventCard",
+		"isnPrg":	33554488,
+		"container":	"Directory",
+		"forms":	[
+			{
+				"formName":	"EventCard",
+				"formId":	"Events/EventCard/EventCard",
+				"formIsn":	1,
+				"containsTableControl":	false,
+				"containsTabControl":	false,
+				"overlay":	true
+			}
+		],
+		"tasks":	[
+			
+		]
+	}
+]

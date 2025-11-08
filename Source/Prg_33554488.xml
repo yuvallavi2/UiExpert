@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="EventCard" ISN_2="1" LastIsn="1" id="33554488">
-          <LastModified _date="739562" _time="37969" date="07/11/2025" time="10:32:49"/>
+          <LastModified _date="739564" _time="104" date="09/11/2025" time="00:01:44"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -99,7 +99,7 @@
           <InitialMode val="M"/>
           <Locate Direction="A"/>
           <Range Direction="A"/>
-          <VarRange LastIsn="1"/>
+          <VarRange LastIsn="2"/>
           <TaskProperties>
             <SelectionTable val="N"/>
             <ConfirmUpdate CNFU="N"/>
@@ -232,7 +232,7 @@
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <Range MAX="1" MIN="1"/>
+                  <Range MAX="33554459" MIN="33554459"/>
                   <INT_OLESUBFORM_INFO>
                     <v>33554445</v>
                   </INT_OLESUBFORM_INFO>
@@ -933,6 +933,10 @@
           <Expression id="26">
             <ExpSyntax val="'SFEventCard'"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="33554459">
+            <ExpSyntax val="1"/>
+            <ExpAttribute val="N"/>
           </Expression>
         </Expressions>
         <EVNT DESC="Save" FORCE_EXIT="N" id="1">

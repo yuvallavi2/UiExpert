@@ -17,6 +17,7 @@ Start.lnk
 # Magic XPA Input/Output
 /input
 /output
+/temp
 
 # Database Files (SQLite)
 *.SQLite
