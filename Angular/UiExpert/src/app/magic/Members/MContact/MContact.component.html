@@ -2,191 +2,193 @@
     novalidate
     [formGroup]="screenFormGroup"
 >
-    <div
-        style="display: flex; flex-direction: column"
-        [magic]="mgc.MContact"
-    >
-        <div style="display: flex; flex-direction: row">
-            <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.btnCreate_Contact"
-            >
-                Create Contact
-            </button>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <div class="example-container mat-elevation-z8 TableMContactTableContainerProps">
-                <mat-table
-                    #table
-                    [dataSource]="dataSource"
-                    class="container_border"
-                    matSort
-                    matSortDisableClear
-                    (matSortChange)="tableService.sortData($event)"
-                >
-                    <ng-container
-                        [magic]="mgc.ColumnType"
-                        [matColumnDef]="mgc.ColumnType"
+    <div [magic]="mgc.MContact">
+        <div class="member-contact-container">
+            <div class="member-contact-content">
+
+                <div class="form-actions">
+                    <button
+                        id="btnCreate_Contact"
+                        type="button"
+                        [magic]="mgc.btnCreate_Contact"
+                        class="button-primary action-button"
                     >
-                        <mat-header-cell *matHeaderCellDef>
-                            Type
-                        </mat-header-cell>
-                        <mat-cell
-                            *matCellDef="let row"
-                            magicMark="magicTableRowContainer"
+                        Create Contact
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <div [magic]="mgc.TableMContact">
+                        <mat-table
+                            #table
+                            [dataSource]="dataSource"
+                            class="contact-table"
+                            matSort
+                            matSortDisableClear
+                            (matSortChange)="tableService.sortData($event)"
                         >
-                            <div
-                                style="display: flex; flex-direction: row"
-                                *ngIf="mg.ifRowCreated(row)"
+                            <!-- Type Column -->
+                            <ng-container
+                                [magic]="mgc.ColumnType"
+                                [matColumnDef]="mgc.ColumnType"
                             >
-                                <div [formGroup]="mg.getFormGroupByRow(row.rowId)">
-                                    <div *ngIf="mg.isRowInRowEditing(row)">
-                                        <mat-form-field>
-                                            <mat-select
+                                <mat-header-cell *matHeaderCellDef class="table-header-type">
+                                    Type
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                    class="table-cell-type"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <select
+                                                id="ComboContactType"
                                                 [magic]="mgc.ComboContactType"
-                                                [rowId]="row.rowId"
                                                 [formControlName]="mgc.ComboContactType"
+                                                [rowId]="row.rowId"
+                                                class="select-input"
                                             >
-                                                <mat-option
-                                                    *ngFor="let o of mg.getItemListValues(mgc.ComboContactType, row.rowId);"
+                                                <option value="">Select type...</option>
+                                                <option
+                                                    *ngFor="let o of mg.getItemListValues(mgc.ComboContactType);"
                                                     [value]="o.index"
                                                 >
                                                     {{o.displayValue}}
-                                                </mat-option>
-                                            </mat-select>
-                                        </mat-form-field>
+                                                </option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div *ngIf="!mg.isRowInRowEditing(row)">
-                                        <label
-                                            [magic]="mgc.ComboContactType"
-                                            [rowId]="row.rowId"
-                                        >
-                                            {{ mg.getDisplayValue(mgc.ComboContactType, row.rowId) }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </mat-cell>
-                    </ng-container>
-                    <ng-container
-                        [magic]="mgc.Column_Value"
-                        [matColumnDef]="mgc.Column_Value"
-                    >
-                        <mat-header-cell *matHeaderCellDef>
-                            Value
-                        </mat-header-cell>
-                        <mat-cell
-                            *matCellDef="let row"
-                            magicMark="magicTableRowContainer"
-                        >
-                            <div
-                                style="display: flex; flex-direction: row"
-                                *ngIf="mg.ifRowCreated(row)"
+                                </mat-cell>
+                            </ng-container>
+
+                            <!-- Value Column -->
+                            <ng-container
+                                [magic]="mgc.Column_Value"
+                                [matColumnDef]="mgc.Column_Value"
                             >
-                                <div
-                                    [formGroup]="mg.getFormGroupByRow(row.rowId)"
-                                    style="display: flex; flex-direction: row"
+                                <mat-header-cell *matHeaderCellDef class="table-header-value">
+                                    Value
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                    class="table-cell-value"
                                 >
-                                    <div>
-                                        <mat-form-field *ngIf="mg.isRowInRowEditing(row)">
-                                            <div>
-                                                <input
-                                                    *ngIf="mg.isRowInRowEditing(row)"
-                                                    matInput
-                                                    [magic]="mgc.Contact_Inforrmation_Value"
-                                                    [rowId]="row.rowId"
-                                                    [formControlName]="mgc.Contact_Inforrmation_Value"
-                                                    mgFormat
-                                                >
-                                                <mgError
-                                                    [magic]=mgc.Contact_Inforrmation_Value
-                                                    [rowId]="row.rowId"
-                                                > </mgError>
-                                            </div>
-                                        </mat-form-field>
-                                        <label
-                                            *ngIf="!mg.isRowInRowEditing(row)"
-                                            [magic]="mgc.Contact_Inforrmation_Value"
-                                            [rowId]="row.rowId"
-                                        >
-                                            {{mg.getValue(mgc.Contact_Inforrmation_Value, row.rowId)
-}}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </mat-cell>
-                    </ng-container>
-                    <ng-container
-                        [magic]="mgc.Column_isPrimary"
-                        [matColumnDef]="mgc.Column_isPrimary"
-                    >
-                        <mat-header-cell *matHeaderCellDef>
-                            isPrimary
-                        </mat-header-cell>
-                        <mat-cell
-                            *matCellDef="let row"
-                            magicMark="magicTableRowContainer"
-                        >
-                            <div
-                                style="display: flex; flex-direction: row"
-                                *ngIf="mg.ifRowCreated(row)"
-                            >
-                                <div [formGroup]="mg.getFormGroupByRow(row.rowId)">
-                                    <mat-checkbox
-                                        [magic]="mgc.CheckBox_isPrimary"
-                                        [rowId]="row.rowId"
-                                        [formControlName]="mgc.CheckBox_isPrimary"
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
                                     >
-                                    </mat-checkbox>
-                                </div>
-                            </div>
-                        </mat-cell>
-                    </ng-container>
-                    <ng-container
-                        [magic]="mgc.ColumnAction"
-                        [matColumnDef]="mgc.ColumnAction"
-                    >
-                        <mat-header-cell *matHeaderCellDef>
-                            Action
-                        </mat-header-cell>
-                        <mat-cell
-                            *matCellDef="let row"
-                            magicMark="magicTableRowContainer"
-                        >
-                            <div
-                                style="display: flex; flex-direction: row"
-                                *ngIf="mg.ifRowCreated(row)"
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <input
+                                                type="text"
+                                                id="Contact_Inforrmation_Value"
+                                                [magic]="mgc.Contact_Inforrmation_Value"
+                                                [formControlName]="mgc.Contact_Inforrmation_Value"
+                                                [rowId]="row.rowId"
+                                                mgFormat
+                                                class="text-input"
+                                                maxlength="50"
+                                                placeholder="Enter contact value"
+                                            >
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+
+                            <!-- isPrimary Column -->
+                            <ng-container
+                                [magic]="mgc.Column_isPrimary"
+                                [matColumnDef]="mgc.Column_isPrimary"
                             >
-                                <button
-                                    mat-raised-button
-                                    color="primary"
-                                    [magic]="mgc.btnDelete"
-                                    [rowId]="row.rowId"
+                                <mat-header-cell *matHeaderCellDef class="table-header-primary">
+                                    isPrimary
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                    class="table-cell-primary"
                                 >
-                                    Delete
-                                </button>
-                            </div>
-                        </mat-cell>
-                    </ng-container>
-                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                    <mat-row
-                        *matRowDef="let row; columns: displayedColumns;"
-                        class="table_row"
-                        [ngClass]="{ 'selected': selection.isSelected(row)}"
-                        [magicRow]="row?.rowId"
-                        (click)="row? tableService.selectRow(row.rowId) : null"
-                    >
-                    </mat-row>
-                </mat-table>
-                <mat-paginator
-                    #paginator
-                    [pageSize]="10"
-                    [pageSizeOptions]="[5, 10, 20]"
-                    (page)="tableService.mgOnPaginateChange($event)"
-                >
-                </mat-paginator>
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                id="CheckBox_isPrimary"
+                                                [magic]="mgc.CheckBox_isPrimary"
+                                                [formControlName]="mgc.CheckBox_isPrimary"
+                                                [rowId]="row.rowId"
+                                                class="checkbox-input"
+                                            >
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+
+                            <!-- Action Column -->
+                            <ng-container
+                                [magic]="mgc.ColumnAction"
+                                [matColumnDef]="mgc.ColumnAction"
+                            >
+                                <mat-header-cell *matHeaderCellDef class="table-header-action">
+                                    Action
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                    class="table-cell-action"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <button
+                                            id="btnDelete"
+                                            type="button"
+                                            [magic]="mgc.btnDelete"
+                                            [rowId]="row.rowId"
+                                            class="button-danger action-button-small"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row
+                                *matRowDef="let row; columns: displayedColumns;"
+                                class="table_row"
+                                [ngClass]="{ 'selected': selection.isSelected(row)}"
+                                [magicRow]="row?.rowId"
+                                (click)="row? tableService.selectRow(row.rowId) : null"
+                            >
+                            </mat-row>
+                        </mat-table>
+                        <mat-paginator
+                            #paginator
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 20]"
+                            (page)="tableService.mgOnPaginateChange($event)"
+                        >
+                        </mat-paginator>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

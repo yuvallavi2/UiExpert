@@ -1,52 +1,75 @@
+<!-- Import project styles -->
+<link rel="stylesheet" href="/src/styles/project.css">
+
 <div
     novalidate
     [formGroup]="screenFormGroup"
 >
-    <div
-        style="display: flex; flex-direction: column"
-        [magic]="mgc.UserDropdown"
-    >
-        <div style="display: flex; flex-direction: row">
+  <div [magic]="mgc.UserDropdown">
+    <div class="user-dropdown-container">
+      <div class="user-dropdown-content">
+        <!-- User Info Section with Image and Updates -->
+        <div class="user-info-section">
+          <div class="notification-badge-wrapper">
             <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.numberOfUpdates"
-            >
-                30
+              type="button"
+              id="numberOfUpdates"
+              [magic]="mgc.numberOfUpdates"
+              class="notification-badge">
+              30
             </button>
-            <div *ngIf="mg.isImageExists(mgc.userImage)">
-                <img
-                    [magic]="mgc.userImage"
-                    [src]="mg.getImage(mgc.userImage)"
-                />
-            </div>
+          </div>
+
+          <div class="user-image-wrapper">
+            <img
+              id="userImage"
+              [magic]="mgc.userImage"
+              src=""
+              alt="User Avatar"
+              class="user-avatar">
+          </div>
         </div>
-        <div style="display: flex; flex-direction: row">
-            <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.numberOfMessages"
-            >
-                30
-            </button>
+
+        <!-- Messages Section -->
+        <div class="dropdown-menu-item">
+          <button
+            type="button"
+            id="numberOfMessages"
+            [magic]="mgc.numberOfMessages"
+            class="menu-button">
+            <span class="menu-button-icon">📧</span>
+            <span class="menu-button-text">Messages</span>
+            <span class="menu-button-badge">30</span>
+          </button>
         </div>
-        <div style="display: flex; flex-direction: row">
-            <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.btnSettings"
-            >
-                Button
-            </button>
+
+        <!-- Settings Section -->
+        <div class="dropdown-menu-item">
+          <button
+            type="button"
+            id="btnSettings"
+            [magic]="mgc.btnSettings"
+            class="menu-button">
+            <span class="menu-button-icon">⚙️</span>
+            <span class="menu-button-text">Settings</span>
+          </button>
         </div>
-        <div style="display: flex; flex-direction: row">
-            <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.btnLogOut"
-            >
-                Button
-            </button>
+
+        <!-- Divider -->
+        <div class="dropdown-divider"></div>
+
+        <!-- Logout Section -->
+        <div class="dropdown-menu-item">
+          <button
+            type="button"
+            id="btnLogOut"
+            [magic]="mgc.btnLogOut"
+            class="menu-button menu-button-logout">
+            <span class="menu-button-icon">🚪</span>
+            <span class="menu-button-text">Log Out</span>
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>

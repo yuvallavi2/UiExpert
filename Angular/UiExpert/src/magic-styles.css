@@ -1,4 +1,95 @@
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
+/* Angular Material Dark Theme */
+@import "@angular/material/prebuilt-themes/purple-green.css";
+
+/* Override Material theme with our custom dark mode colors */
+.mat-mdc-table,
+.mat-mdc-header-row,
+.mat-mdc-row,
+.mat-mdc-cell,
+.mat-mdc-header-cell {
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-primary);
+}
+
+.mat-mdc-table {
+  background: var(--color-background-secondary);
+}
+
+.mat-mdc-row:hover {
+  background-color: var(--color-table-row-hover) !important;
+}
+
+.mat-mdc-header-cell {
+  color: var(--color-text-primary) !important;
+  background-color: var(--color-table-header-bg) !important;
+}
+
+.mat-mdc-cell {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-border-primary);
+}
+
+.mat-mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.mat-mdc-form-field {
+  color: var(--color-text-primary);
+}
+
+.mat-mdc-select,
+.mat-mdc-input-element {
+  color: var(--color-text-primary);
+  background-color: var(--color-input-background);
+}
+
+.mat-mdc-select-panel,
+.mat-mdc-autocomplete-panel {
+  background: var(--color-background-secondary);
+}
+
+.mat-mdc-option {
+  color: var(--color-text-primary);
+}
+
+.mat-mdc-option:hover {
+  background-color: var(--color-background-tertiary);
+}
+
+.mat-mdc-button,
+.mat-mdc-raised-button {
+  color: var(--color-text-primary);
+}
+
+.mat-primary {
+  --mdc-filled-button-container-color: var(--color-primary-500);
+  --mdc-protected-button-container-color: var(--color-primary-500);
+}
+
+/* Fix Material form fields for dark mode */
+.mat-mdc-text-field-wrapper {
+  background-color: var(--color-input-background);
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: var(--color-input-background);
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: transparent;
+}
+
+/* Material paginator dark mode */
+.mat-mdc-paginator {
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-primary);
+}
+
+.mat-mdc-paginator-page-size-label,
+.mat-mdc-paginator-range-label {
+  color: var(--color-text-secondary);
+}
 
 .align_center {
     text-align: center;
@@ -53,8 +144,8 @@
 
 .tab_control {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: 1px solid var(--color-border-primary);
+  background-color: var(--color-background-secondary);
 }
 
 .tab_button {
@@ -64,28 +155,31 @@
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
+  color: var(--color-text-primary);
 }
 
 .tab_button_active {
-  background-color: #ccc;
+  background-color: var(--color-background-tertiary);
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
+  color: var(--color-text-primary);
 }
 
 .tab_button:hover {
-  background-color: #ddd;
+  background-color: var(--color-background-hover);
 }
 
 .tab_content {
   padding: 6px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border-primary);
   border-bottom: none;
   border-left: none;
   border-right: none;
   clear:both;
+  color: var(--color-text-primary);
 }
 
 /* style for input on table*/
@@ -107,15 +201,15 @@
 }
 
 .container_border{
-  border: lightskyblue solid 1px;
+  border: var(--color-primary-400) solid 1px;
 }
 
 .selected {
-  background: #F5F5F5 !important;
+  background: var(--color-background-tertiary) !important;
 }
 
 .table_row:hover {
-  background-color: #EEEEEE;
+  background-color: var(--color-table-row-hover);
 }
 /* remark : we decided to give the end user the normal list box without you update the behavior*/
 /*for material list box control*/

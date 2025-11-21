@@ -42,6 +42,7 @@
               }
             ],
             "styles": [
+              "src/magic-styles.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -100,6 +101,7 @@
               }
             ],
             "styles": [
+              "src/magic-styles.css",
               "src/styles.css"
             ],
             "scripts": []

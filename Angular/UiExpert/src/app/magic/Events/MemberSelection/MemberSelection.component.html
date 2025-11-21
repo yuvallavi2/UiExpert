@@ -2,129 +2,129 @@
     novalidate
     [formGroup]="screenFormGroup"
 >
-    <div
-        style="display: flex; flex-direction: column"
-        [magic]="mgc.MemberSelection"
-    >
-        <div style="display: flex; flex-direction: row">
-            <div class="example-container mat-elevation-z8 MemberSelectionTableTableContainerProps">
-                <mat-table
-                    #table
-                    [dataSource]="dataSource"
-                    class="container_border"
-                    matSort
-                    matSortDisableClear
-                    (matSortChange)="tableService.sortData($event)"
-                >
-                    <ng-container
-                        [magic]="mgc.ColumnCheck"
-                        [matColumnDef]="mgc.ColumnCheck"
-                    >
-                        <mat-header-cell *matHeaderCellDef>
-                            #
-                        </mat-header-cell>
-                        <mat-cell
-                            *matCellDef="let row"
-                            magicMark="magicTableRowContainer"
+    <div [magic]="mgc.MemberSelection">
+        <!-- MemberSelection Component -->
+        <div class="member-selection-container">
+            <div class="member-selection-content">
+
+                <!-- Member Selection Table -->
+                <div class="table-container">
+                    <div class="example-container mat-elevation-z8">
+                        <mat-table
+                            #table
+                            [dataSource]="dataSource"
+                            [magic]="mgc.MemberSelectionTable"
+                            class="container_border"
+                            matSort
+                            matSortDisableClear
+                            (matSortChange)="tableService.sortData($event)"
                         >
-                            <div
-                                style="display: flex; flex-direction: row"
-                                *ngIf="mg.ifRowCreated(row)"
+                            <!-- Checkbox Column -->
+                            <ng-container
+                                [magic]="mgc.ColumnCheck"
+                                [matColumnDef]="mgc.ColumnCheck"
                             >
-                                <div [formGroup]="mg.getFormGroupByRow(row.rowId)">
-                                    <mat-checkbox
-                                        [magic]="mgc.CheckSelect"
-                                        [rowId]="row.rowId"
-                                        [formControlName]="mgc.CheckSelect"
-                                    >
-                                    </mat-checkbox>
-                                </div>
-                            </div>
-                        </mat-cell>
-                    </ng-container>
-                    <ng-container
-                        [magic]="mgc.ColumnMemberName"
-                        [matColumnDef]="mgc.ColumnMemberName"
-                    >
-                        <mat-header-cell *matHeaderCellDef>
-                            Member Name
-                        </mat-header-cell>
-                        <mat-cell
-                            *matCellDef="let row"
-                            magicMark="magicTableRowContainer"
-                        >
-                            <div
-                                style="display: flex; flex-direction: row"
-                                *ngIf="mg.ifRowCreated(row)"
-                            >
-                                <div
-                                    [formGroup]="mg.getFormGroupByRow(row.rowId)"
-                                    style="display: flex; flex-direction: row"
+                                <mat-header-cell *matHeaderCellDef>
+                                    #
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
                                 >
-                                    <div>
-                                        <mat-form-field *ngIf="mg.isRowInRowEditing(row)">
-                                            <div>
-                                                <input
-                                                    *ngIf="mg.isRowInRowEditing(row)"
-                                                    matInput
-                                                    [magic]="mgc.MemberName"
-                                                    [rowId]="row.rowId"
-                                                    [formControlName]="mgc.MemberName"
-                                                    mgFormat
-                                                >
-                                                <mgError
-                                                    [magic]=mgc.MemberName
-                                                    [rowId]="row.rowId"
-                                                > </mgError>
-                                            </div>
-                                        </mat-form-field>
-                                        <label
-                                            *ngIf="!mg.isRowInRowEditing(row)"
-                                            [magic]="mgc.MemberName"
-                                            [rowId]="row.rowId"
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
                                         >
-                                            {{mg.getValue(mgc.MemberName, row.rowId)
-}}
-                                        </label>
+                                            <mat-checkbox
+                                                [magic]="mgc.CheckSelect"
+                                                [formControlName]="mgc.CheckSelect"
+                                                [rowId]="row.rowId"
+                                                class="checkbox-input"
+                                            >
+                                            </mat-checkbox>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </mat-cell>
-                    </ng-container>
-                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                    <mat-row
-                        *matRowDef="let row; columns: displayedColumns;"
-                        class="table_row"
-                        [ngClass]="{ 'selected': selection.isSelected(row)}"
-                        [magicRow]="row?.rowId"
-                        (click)="row? tableService.selectRow(row.rowId) : null"
+                                </mat-cell>
+                            </ng-container>
+
+                            <!-- Member Name Column -->
+                            <ng-container
+                                [magic]="mgc.ColumnMemberName"
+                                [matColumnDef]="mgc.ColumnMemberName"
+                            >
+                                <mat-header-cell *matHeaderCellDef>
+                                    Member Name
+                                </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <div
+                                        style="display: flex; flex-direction: row"
+                                        *ngIf="mg.ifRowCreated(row)"
+                                    >
+                                        <div
+                                            [formGroup]="mg.getFormGroupByRow(row.rowId)"
+                                            style="display: flex; flex-direction: row"
+                                        >
+                                            <label
+                                                [magic]="mgc.MemberName"
+                                                [rowId]="row.rowId"
+                                                class="text-input"
+                                            >
+                                                {{mg.getValue(mgc.MemberName, row.rowId)}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row
+                                *matRowDef="let row; columns: displayedColumns;"
+                                class="table_row"
+                                [ngClass]="{ 'selected': selection.isSelected(row)}"
+                                [magicRow]="row?.rowId"
+                                (click)="row? tableService.selectRow(row.rowId) : null"
+                            >
+                            </mat-row>
+                        </mat-table>
+                        <mat-paginator
+                            #paginator
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 20]"
+                            (page)="tableService.mgOnPaginateChange($event)"
+                        >
+                        </mat-paginator>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        type="button"
+                        [magic]="mgc.BtnSelect"
+                        class="action-button button-primary"
                     >
-                    </mat-row>
-                </mat-table>
-                <mat-paginator
-                    #paginator
-                    [pageSize]="10"
-                    [pageSizeOptions]="[5, 10, 20]"
-                    (page)="tableService.mgOnPaginateChange($event)"
-                >
-                </mat-paginator>
+                        Select
+                    </button>
+                    <button
+                        mat-raised-button
+                        type="button"
+                        [magic]="mgc.BtnCancel"
+                        class="action-button button-secondary"
+                    >
+                        Cancel
+                    </button>
+                </div>
+
             </div>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.BtnSelect"
-            >
-                Select
-            </button>
-            <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.BtnCancel"
-            >
-                Cancel
-            </button>
         </div>
     </div>
 </div>

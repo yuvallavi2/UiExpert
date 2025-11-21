@@ -13,10 +13,12 @@
 MagicIDs/branchIDs*.*
 Developer.ini
 Start.lnk
+mglock.dat
 
 # Magic XPA Input/Output
 /input
 /output
+/temp
 
 # Database Files (SQLite)
 *.SQLite
@@ -62,3 +64,4 @@ yarn-error.log*
 .env.local
 .env.*.local
 
+/*.SQLite

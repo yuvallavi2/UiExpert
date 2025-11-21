@@ -8,7 +8,7 @@ UiExpert is a hybrid application built with Magic XPA (low-code platform) and An
 
 ⚠️  **BEFORE STARTING ANY WORK - READ AND ACKNOWLEDGE THESE CRITICAL RULES:**
   - !Never update any files in the Source folder 
-  - Yoc can only change TS, HTML, and CSS files that are part of Angular components 
+  - Yoc can only change TS, HTML, and CSS files that are part of Angular Project 
 
 ## Architecture
 

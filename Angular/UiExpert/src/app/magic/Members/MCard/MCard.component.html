@@ -2,161 +2,179 @@
     novalidate
     [formGroup]="screenFormGroup"
 >
-    <div
-        style="display: flex; flex-direction: column"
-        [magic]="mgc.MCard"
-    >
-        <div style="display: flex; flex-direction: row">
-            <div>
-                <mat-form-field>
-                    <div>
-                        <input
-                            matInput
-                            type='number'
-                            [magic]="mgc.Member_ID"
-                            [formControlName]="mgc.Member_ID"
-                            mgFormat
-                        >
-                        <mgError [magic]=mgc.Member_ID> </mgError>
+    <div [magic]="mgc.MCard">
+        <div class="member-card-container">
+            <div class="member-card-content">
+
+                <div class="form-row form-row-two-columns">
+                    <div class="half-width">
+                        <label class="form-label">
+                            <span class="label-text">Member ID</span>
+                            <input
+                                type="number"
+                                id="Member_ID"
+                                [magic]="mgc.Member_ID"
+                                [formControlName]="mgc.Member_ID"
+                                mgFormat
+                                class="text-input"
+                                maxlength="10"
+                            >
+                        </label>
                     </div>
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field>
-                    <div>
-                        <input
-                            matInput
-                            [magic]="mgc.P_pBtnVisibility"
-                            [formControlName]="mgc.P_pBtnVisibility"
-                            mgFormat
-                            rangevalidator
-                        >
-                        <mgError [magic]=mgc.P_pBtnVisibility> </mgError>
+
+                    <div class="half-width">
+                        <label class="form-label">
+                            <span class="label-text">Button Visibility</span>
+                            <select
+                                id="P_pBtnVisibility"
+                                [magic]="mgc.P_pBtnVisibility"
+                                [formControlName]="mgc.P_pBtnVisibility"
+                                class="select-input"
+                            >
+                                <option
+                                    *ngFor="let o of mg.getItemListValues(mgc.P_pBtnVisibility);"
+                                    [value]="o.index"
+                                >
+                                    {{o.displayValue}}
+                                </option>
+                            </select>
+                        </label>
                     </div>
-                </mat-form-field>
-            </div>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <div>
-                <mat-form-field>
-                    <mat-select
-                        [magic]="mgc.Combo_Title"
-                        [formControlName]="mgc.Combo_Title"
-                        required
-                    >
-                        <mat-option
-                            *ngFor="let o of mg.getItemListValues(mgc.Combo_Title);"
-                            [value]="o.index"
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">
+                        <span class="label-text">Title <span class="required-indicator">*</span></span>
+                        <select
+                            id="Combo_Title"
+                            [magic]="mgc.Combo_Title"
+                            [formControlName]="mgc.Combo_Title"
+                            class="select-input"
+                            required
                         >
-                            {{o.displayValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mgError [magic]=mgc.Combo_Title> </mgError>
-            </div>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <div>
-                <mat-form-field>
-                    <div>
+                            <option value="">Select title...</option>
+                            <option
+                                *ngFor="let o of mg.getItemListValues(mgc.Combo_Title);"
+                                [value]="o.index"
+                            >
+                                {{o.displayValue}}
+                            </option>
+                        </select>
+                        <mgError [magic]=mgc.Combo_Title></mgError>
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">
+                        <span class="label-text">First Name <span class="required-indicator">*</span></span>
                         <input
-                            matInput
+                            type="text"
+                            id="First_Name"
                             [magic]="mgc.First_Name"
                             [formControlName]="mgc.First_Name"
                             mgFormat
+                            class="text-input"
+                            maxlength="50"
                             required
                         >
-                        <mgError [magic]=mgc.First_Name> </mgError>
-                    </div>
-                </mat-form-field>
-            </div>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <div>
-                <mat-form-field>
-                    <div>
+                        <mgError [magic]=mgc.First_Name></mgError>
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">
+                        <span class="label-text">Last Name <span class="required-indicator">*</span></span>
                         <input
-                            matInput
+                            type="text"
+                            id="Last_Name"
                             [magic]="mgc.Last_Name"
                             [formControlName]="mgc.Last_Name"
                             mgFormat
+                            class="text-input"
+                            maxlength="50"
                             required
                         >
-                        <mgError [magic]=mgc.Last_Name> </mgError>
-                    </div>
-                </mat-form-field>
-            </div>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <div>
-                <mat-form-field
-                    [magic]="mgc.Birth_Date"
-                    [eventsOnly]=true
-                >
-                    <input
-                        matInput
-                        [matDatepicker]="Birth_Date"
-                        [magic]="mgc.Birth_Date"
-                        [formControlName]="mgc.Birth_Date"
-                        mgFormat
-                    >
-                    <mat-datepicker-toggle
-                        matSuffix
-                        [for]="Birth_Date"
-                        *ngIf="!mg.checkIsReadOnly(mgc.Birth_Date)"
-                    >
-                    </mat-datepicker-toggle>
-                    <mat-datepicker #Birth_Date></mat-datepicker>
-                </mat-form-field>
-            </div>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <div>
-                <mat-form-field>
-                    <mat-select
-                        [magic]="mgc.Combo_Gender"
-                        [formControlName]="mgc.Combo_Gender"
-                        required
-                    >
-                        <mat-option
-                            *ngFor="let o of mg.getItemListValues(mgc.Combo_Gender);"
-                            [value]="o.index"
+                        <mgError [magic]=mgc.Last_Name></mgError>
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">
+                        <span class="label-text">Birth Date <span class="required-indicator">*</span></span>
+                        <div
+                            [magic]="mgc.Birth_Date"
+                            [eventsOnly]=true
                         >
-                            {{o.displayValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mgError [magic]=mgc.Combo_Gender> </mgError>
+                            <input
+                                type="date"
+                                id="Birth_Date"
+                                [magic]="mgc.Birth_Date"
+                                [formControlName]="mgc.Birth_Date"
+                                mgFormat
+                                class="text-input"
+                                required
+                            >
+                        </div>
+                        <mgError [magic]=mgc.Birth_Date></mgError>
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">
+                        <span class="label-text">Gender <span class="required-indicator">*</span></span>
+                        <select
+                            id="Combo_Gender"
+                            [magic]="mgc.Combo_Gender"
+                            [formControlName]="mgc.Combo_Gender"
+                            class="select-input"
+                            required
+                        >
+                            <option value="">Select gender...</option>
+                            <option
+                                *ngFor="let o of mg.getItemListValues(mgc.Combo_Gender);"
+                                [value]="o.index"
+                            >
+                                {{o.displayValue}}
+                            </option>
+                        </select>
+                        <mgError [magic]=mgc.Combo_Gender></mgError>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button
+                        id="btnSave"
+                        type="button"
+                        [magic]="mgc.btnSave"
+                        [disabled]="mg.isDisabled(mgc.btnSave)"
+                        class="button-primary action-button"
+                    >
+                        Save
+                    </button>
+                </div>
+
+                <div class="form-row">
+                    <magic-subform [magic]="mgc.SubF_M_Contact">
+                    </magic-subform>
+                </div>
+
+                <div class="form-row">
+                    <magic-subform [magic]="mgc.SubFMEmail">
+                    </magic-subform>
+                </div>
+
+                <div class="form-actions">
+                    <button
+                        id="btnQuit"
+                        type="button"
+                        [magic]="mgc.btnQuit"
+                        class="button-secondary action-button"
+                    >
+                        CreateQuit
+                    </button>
+                </div>
+
             </div>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.btnSave"
-                [disabled]="mg.isDisabled(mgc.btnSave )"
-            >
-                Save
-            </button>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <mat-card>
-                <magic-subform [magic]="mgc.SubF_M_Contact">
-                </magic-subform>
-            </mat-card>
-            <mat-card>
-                <magic-subform [magic]="mgc.SubFMEmail">
-                </magic-subform>
-            </mat-card>
-        </div>
-        <div style="display: flex; flex-direction: row">
-            <button
-                mat-raised-button
-                color="primary"
-                [magic]="mgc.btnQuit"
-            >
-                CreateQuit
-            </button>
         </div>
     </div>
 </div>

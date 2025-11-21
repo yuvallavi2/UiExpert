@@ -1,24 +1,25 @@
+<link rel="stylesheet" href="/src/styles/project.css">
+
 <div
     novalidate
     [formGroup]="screenFormGroup"
 >
-    <div
-        style="display: flex; flex-direction: column"
-        [magic]="mgc.Welcome"
-    >
-        <div style="display: flex; flex-direction: row">
-            <div>
-                <mat-form-field>
-                    <div>
-                        <input
-                            matInput
-                            [magic]="mgc.welcomeText"
-                            [formControlName]="mgc.welcomeText"
-                            mgFormat
-                        >
-                        <mgError [magic]=mgc.welcomeText> </mgError>
-                    </div>
-                </mat-form-field>
+    <div [magic]="mgc.Welcome">
+        <div class="welcome-container">
+            <div class="welcome-content">
+                <div class="welcome-text-wrapper">
+                    <input
+                        type="text"
+                        id="welcomeText"
+                        [magic]="mgc.welcomeText"
+                        [formControlName]="mgc.welcomeText"
+                        mgFormat
+                        class="welcome-text-input"
+                        maxlength="100"
+                        placeholder="Welcome message"
+                    >
+                    <mgError [magic]=mgc.welcomeText></mgError>
+                </div>
             </div>
         </div>
     </div>

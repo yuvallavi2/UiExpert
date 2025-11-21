@@ -1,176 +1,250 @@
-<link rel="stylesheet" href="/src/styles/project.css">
+<div
+  novalidate
+  [formGroup]="screenFormGroup"
+>
+  <div
+    class="w-full max-w-3xl mx-auto p-4 sm:p-6 lg:p-8"
+    [magic]="mgc.EventCard"
+  >
+    <div class="space-y-6">
 
-<div class="w-full max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
-  <div class="space-y-6">
+      <div class="form-row">
+        <label
+          for="Event_ID"
+          class="text-white/80 text-sm font-medium leading-normal pb-2 block">
+          Event ID
+        </label>
+        <span id="Event_ID" class="text-white/90 text-base font-normal">
+          <input
+            type="hidden"
+            [magic]="mgc.Event_ID"
+            [formControlName]="mgc.Event_ID"
+            mgFormat
+            readonly
+          />
+        </span>
+      </div>
 
-    <div class="form-row">
-      <label
-        for="Event_ID"
-        class="text-white/80 text-sm font-medium leading-normal pb-2 block">
-        Event ID
-      </label>
-      <span id="Event_ID" class="text-white/90 text-base font-normal">
-        <!-- Event ID display -->
-      </span>
-    </div>
-
-    <input
-      type="hidden"
-      id="P_pBtnVisibility"
-      name="P_pBtnVisibility">
-
-    <div class="form-row">
-      <label
-        for="ComboEventType"
-        class="text-white/90 text-base font-medium leading-normal pb-2 block">
-        Event Type <span class="text-danger">*</span>
-      </label>
-      <select
-        id="ComboEventType"
-        name="ComboEventType"
-        required
-        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
-        <option value="">Select Event Type</option>
-      </select>
-    </div>
-
-    <div class="form-row">
-      <label
-        for="Event_Name"
-        class="text-white/90 text-base font-medium leading-normal pb-2 block">
-        Event Name
-      </label>
       <input
-        type="text"
-        id="Event_Name"
-        name="Event_Name"
-        maxlength="50"
-        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors"
-        placeholder="Enter event name">
-    </div>
+        type="hidden"
+        id="P_pBtnVisibility"
+        name="P_pBtnVisibility"
+        [magic]="mgc.P_pBtnVisibility"
+        [formControlName]="mgc.P_pBtnVisibility"
+      />
 
-    <div class="form-row">
-      <label
-        for="ComboEventLocation"
-        class="text-white/90 text-base font-medium leading-normal pb-2 block">
-        Event Location
-      </label>
-      <select
-        id="ComboEventLocation"
-        name="ComboEventLocation"
-        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
-        <option value="">Select Location</option>
-      </select>
-    </div>
+      <div class="form-row">
+        <label
+          for="ComboEventType"
+          class="text-white/90 text-base font-medium leading-normal pb-2 block">
+          Event Type <span class="text-danger">*</span>
+        </label>
+        <select
+          id="ComboEventType"
+          name="ComboEventType"
+          [magic]="mgc.ComboEventType"
+          [formControlName]="mgc.ComboEventType"
+          [required]="true"
+          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
+          <option value="">Select Event Type</option>
+          <option
+            *ngFor="let o of mg.getItemListValues(mgc.ComboEventType);"
+            [value]="o.index"
+          >
+            {{o.displayValue}}
+          </option>
+        </select>
+        <mgError [magic]=mgc.ComboEventType></mgError>
+      </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="form-row">
         <label
-          for="Start_Date"
+          for="Event_Name"
           class="text-white/90 text-base font-medium leading-normal pb-2 block">
-          Start Date <span class="text-danger">*</span>
+          Event Name
         </label>
         <input
-          type="date"
-          id="Start_Date"
-          name="Start_Date"
-          required
-          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
-      </div>
-      <div class="form-row">
-        <label
-          for="End_Date"
-          class="text-white/90 text-base font-medium leading-normal pb-2 block">
-          End Date <span class="text-danger">*</span>
-        </label>
-        <input
-          type="date"
-          id="End_Date"
-          name="End_Date"
-          required
-          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="form-row">
-        <label
-          for="EventStartTime"
-          class="text-white/90 text-base font-medium leading-normal pb-2 block">
-          Start Time
-        </label>
-        <input
-          type="time"
-          id="EventStartTime"
-          name="EventStartTime"
-          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
-      </div>
-      <div class="form-row">
-        <label
-          for="Event_Inforrmation_End_Time"
-          class="text-white/90 text-base font-medium leading-normal pb-2 block">
-          End Time
-        </label>
-        <input
-          type="time"
-          id="Event_Inforrmation_End_Time"
-          name="Event_Inforrmation_End_Time"
-          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="form-row">
-        <label
-          for="Minimum_Attendees"
-          class="text-white/90 text-base font-medium leading-normal pb-2 block">
-          Minimum Attendees
-        </label>
-        <input
-          type="number"
-          id="Minimum_Attendees"
-          name="Minimum_Attendees"
-          min="0"
-          max="99999"
+          type="text"
+          id="Event_Name"
+          name="Event_Name"
+          [magic]="mgc.Event_Name"
+          [formControlName]="mgc.Event_Name"
+          mgFormat
+          maxlength="50"
           class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors"
-          placeholder="Min">
+          placeholder="Enter event name">
+        <mgError [magic]=mgc.Event_Name></mgError>
       </div>
+
       <div class="form-row">
         <label
-          for="Maximum_Attendees"
+          for="ComboEventLocation"
           class="text-white/90 text-base font-medium leading-normal pb-2 block">
-          Maximum Attendees
+          Event Location
         </label>
-        <input
-          type="number"
-          id="Maximum_Attendees"
-          name="Maximum_Attendees"
-          min="0"
-          max="99999"
-          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors"
-          placeholder="Max">
+        <select
+          id="ComboEventLocation"
+          name="ComboEventLocation"
+          [magic]="mgc.ComboEventLocation"
+          [formControlName]="mgc.ComboEventLocation"
+          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
+          <option value="">Select Location</option>
+          <option
+            *ngFor="let o of mg.getItemListValues(mgc.ComboEventLocation);"
+            [value]="o.index"
+          >
+            {{o.displayValue}}
+          </option>
+        </select>
+        <mgError [magic]=mgc.ComboEventLocation></mgError>
       </div>
-    </div>
 
-    <div class="subform-wireframe">
-      <strong class="text-white/70">SubForm: SfRegisteredMembers</strong>
-      <p class="text-sm text-white/50 mt-2">Registered Members List</p>
-    </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="form-row">
+          <label
+            for="Start_Date"
+            class="text-white/90 text-base font-medium leading-normal pb-2 block">
+            Start Date <span class="text-danger">*</span>
+          </label>
+          <div
+            [magic]="mgc.Start_Date"
+            [eventsOnly]=true
+          >
+            <input
+              type="date"
+              id="Start_Date"
+              name="Start_Date"
+              [magic]="mgc.Start_Date"
+              [formControlName]="mgc.Start_Date"
+              mgFormat
+              [required]="true"
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
+          </div>
+          <mgError [magic]=mgc.Start_Date></mgError>
+        </div>
+        <div class="form-row">
+          <label
+            for="End_Date"
+            class="text-white/90 text-base font-medium leading-normal pb-2 block">
+            End Date <span class="text-danger">*</span>
+          </label>
+          <div
+            [magic]="mgc.End_Date"
+            [eventsOnly]=true
+          >
+            <input
+              type="date"
+              id="End_Date"
+              name="End_Date"
+              [magic]="mgc.End_Date"
+              [formControlName]="mgc.End_Date"
+              mgFormat
+              [required]="true"
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
+          </div>
+          <mgError [magic]=mgc.End_Date></mgError>
+        </div>
+      </div>
 
-    <div class="flex justify-start gap-4 pt-4">
-      <button
-        type="button"
-        id="btnSave"
-        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-        <span class="truncate">Save</span>
-      </button>
-      <button
-        type="button"
-        id="btnQuit"
-        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-transparent text-white/80 text-sm font-bold leading-normal tracking-[0.015em] border border-white/20 hover:bg-white/10 transition-colors">
-        <span class="truncate">Quit</span>
-      </button>
-    </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="form-row">
+          <label
+            for="EventStartTime"
+            class="text-white/90 text-base font-medium leading-normal pb-2 block">
+            Start Time
+          </label>
+          <input
+            type="time"
+            id="EventStartTime"
+            name="EventStartTime"
+            [magic]="mgc.EventStartTime"
+            [formControlName]="mgc.EventStartTime"
+            mgFormat
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
+          <mgError [magic]=mgc.EventStartTime></mgError>
+        </div>
+        <div class="form-row">
+          <label
+            for="Event_Inforrmation_End_Time"
+            class="text-white/90 text-base font-medium leading-normal pb-2 block">
+            End Time
+          </label>
+          <input
+            type="time"
+            id="Event_Inforrmation_End_Time"
+            name="Event_Inforrmation_End_Time"
+            [magic]="mgc.Event_Inforrmation_End_Time"
+            [formControlName]="mgc.Event_Inforrmation_End_Time"
+            mgFormat
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors">
+          <mgError [magic]=mgc.Event_Inforrmation_End_Time></mgError>
+        </div>
+      </div>
 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="form-row">
+          <label
+            for="Minimum_Attendees"
+            class="text-white/90 text-base font-medium leading-normal pb-2 block">
+            Minimum Attendees
+          </label>
+          <input
+            type="number"
+            id="Minimum_Attendees"
+            name="Minimum_Attendees"
+            [magic]="mgc.Minimum_Attendees"
+            [formControlName]="mgc.Minimum_Attendees"
+            mgFormat
+            min="0"
+            max="99999"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors"
+            placeholder="Min">
+          <mgError [magic]=mgc.Minimum_Attendees></mgError>
+        </div>
+        <div class="form-row">
+          <label
+            for="Maximum_Attendees"
+            class="text-white/90 text-base font-medium leading-normal pb-2 block">
+            Maximum Attendees
+          </label>
+          <input
+            type="number"
+            id="Maximum_Attendees"
+            name="Maximum_Attendees"
+            [magic]="mgc.Maximum_Attendees"
+            [formControlName]="mgc.Maximum_Attendees"
+            mgFormat
+            min="0"
+            max="99999"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary focus:ring-opacity-50 border-none bg-white/5 h-14 placeholder:text-white/40 p-4 text-base font-normal leading-normal transition-colors"
+            placeholder="Max">
+          <mgError [magic]=mgc.Maximum_Attendees></mgError>
+        </div>
+      </div>
+
+      <div class="subform-wireframe">
+        <magic-subform [magic]="mgc.SfRegisteredMembers">
+        </magic-subform>
+      </div>
+
+      <div class="flex justify-start gap-4 pt-4">
+        <button
+          type="button"
+          id="btnSave"
+          [magic]="mgc.btnSave"
+          [disabled]="mg.isDisabled(mgc.btnSave)"
+          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+          <span class="truncate">Save</span>
+        </button>
+        <button
+          type="button"
+          id="btnQuit"
+          [magic]="mgc.btnQuit"
+          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-transparent text-white/80 text-sm font-bold leading-normal tracking-[0.015em] border border-white/20 hover:bg-white/10 transition-colors">
+          <span class="truncate">Quit</span>
+        </button>
+      </div>
+
+    </div>
   </div>
 </div>
