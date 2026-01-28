@@ -11,8 +11,7 @@ import { TaskBaseMagicComponent, magicProviders } from "@magic-xpa/angular";
     selector: 'mga-mainWC_StartProgram_StartProgram',
     providers: [...magicProviders],
     standalone: false,
-    templateUrl: './StartProgram.component.html',
-    styleUrls: ['./StartProgram.component.css']
+    templateUrl: './StartProgram.component.html'
 })
 export class StartProgram extends TaskBaseMagicComponent {
 

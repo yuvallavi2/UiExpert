@@ -1,0 +1,37 @@
+[
+	{
+		"programName":	"StartProgram",
+		"isnPrg":	33554462,
+		"container":	"Directory",
+		"forms":	[
+			{
+				"formName":	"StartProgram",
+				"formId":	"mainWC/StartProgram/StartProgram",
+				"formIsn":	1,
+				"containsTableControl":	false,
+				"containsTabControl":	false,
+				"overlay":	false
+			}
+		],
+		"tasks":	[
+			{
+				"programName":	"UserDropdown",
+				"isnPrg":	33554435,
+				"container":	"Directory",
+				"forms":	[
+					{
+						"formName":	"UserDropdown",
+						"formId":	"mainWC/StartProgram/UserDropdown/UserDropdown",
+						"formIsn":	1,
+						"containsTableControl":	false,
+						"containsTabControl":	false,
+						"overlay":	false
+					}
+				],
+				"tasks":	[
+					
+				]
+			}
+		]
+	}
+]

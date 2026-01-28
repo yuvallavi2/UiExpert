@@ -1,0 +1,210 @@
+<!-- MCard Component - Member Card Form -->
+<!-- Import: @import url('src/styles/project.css'); -->
+
+<div
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        [magic]="mgc.MCard"
+        class="member-card-container"
+    >
+        <div class="member-card-content">
+            <!-- Member ID (read-only display) -->
+            <div class="form-row">
+                <label
+                    for="Member_ID"
+                    class="form-label">
+                    Member ID
+                </label>
+                <input
+                    id="Member_ID"
+                    type="number"
+                    maxlength="10"
+                    placeholder="Member ID"
+                    [magic]="mgc.Member_ID"
+                    [formControlName]="mgc.Member_ID"
+                    mgFormat
+                    readonly
+                    class="form-input form-input-disabled" />
+                <mgError [magic]=mgc.Member_ID></mgError>
+            </div>
+
+            <!-- Title and Visibility Row -->
+            <div class="form-row form-row-two-columns">
+                <!-- Title Dropdown -->
+                <div class="half-width">
+                    <label
+                        for="Combo_Title"
+                        class="form-label form-label-required">
+                        Title
+                    </label>
+                    <select
+                        id="Combo_Title"
+                        [magic]="mgc.Combo_Title"
+                        [formControlName]="mgc.Combo_Title"
+                        required
+                        class="form-select">
+                        <option
+                            *ngFor="let o of mg.getItemListValues(mgc.Combo_Title);"
+                            [value]="o.index"
+                        >
+                            {{o.displayValue}}
+                        </option>
+                    </select>
+                    <mgError [magic]=mgc.Combo_Title></mgError>
+                </div>
+
+                <!-- Visibility Toggle (hidden utility field) -->
+                <div class="half-width">
+                    <label
+                        for="P_pBtnVisibility"
+                        class="form-label">
+                        Visibility
+                    </label>
+                    <select
+                        id="P_pBtnVisibility"
+                        [magic]="mgc.P_pBtnVisibility"
+                        [formControlName]="mgc.P_pBtnVisibility"
+                        class="form-select">
+                        <option
+                            *ngFor="let o of mg.getItemListValues(mgc.P_pBtnVisibility);"
+                            [value]="o.index"
+                        >
+                            {{o.displayValue}}
+                        </option>
+                    </select>
+                    <mgError [magic]=mgc.P_pBtnVisibility></mgError>
+                </div>
+            </div>
+
+            <!-- First Name -->
+            <div class="form-row">
+                <label
+                    for="First_Name"
+                    class="form-label form-label-required">
+                    First Name
+                </label>
+                <input
+                    id="First_Name"
+                    type="text"
+                    maxlength="50"
+                    placeholder="Enter first name"
+                    [magic]="mgc.First_Name"
+                    [formControlName]="mgc.First_Name"
+                    mgFormat
+                    required
+                    class="form-input" />
+                <mgError [magic]=mgc.First_Name></mgError>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-row">
+                <label
+                    for="Last_Name"
+                    class="form-label form-label-required">
+                    Last Name
+                </label>
+                <input
+                    id="Last_Name"
+                    type="text"
+                    maxlength="50"
+                    placeholder="Enter last name"
+                    [magic]="mgc.Last_Name"
+                    [formControlName]="mgc.Last_Name"
+                    mgFormat
+                    required
+                    class="form-input" />
+                <mgError [magic]=mgc.Last_Name></mgError>
+            </div>
+
+            <!-- Birth Date and Gender Row -->
+            <div class="form-row form-row-two-columns">
+                <!-- Birth Date -->
+                <div
+                    class="half-width"
+                    [magic]="mgc.Birth_Date"
+                    [eventsOnly]=true
+                >
+                    <label
+                        for="Birth_Date"
+                        class="form-label form-label-required">
+                        Birth Date
+                    </label>
+                    <input
+                        id="Birth_Date"
+                        type="date"
+                        maxlength="10"
+                        placeholder="DD/MM/YYYY"
+                        [magic]="mgc.Birth_Date"
+                        [formControlName]="mgc.Birth_Date"
+                        mgFormat
+                        required
+                        class="form-input" />
+                    <mgError [magic]=mgc.Birth_Date></mgError>
+                </div>
+
+                <!-- Gender Dropdown -->
+                <div class="half-width">
+                    <label
+                        for="Combo_Gender"
+                        class="form-label form-label-required">
+                        Gender
+                    </label>
+                    <select
+                        id="Combo_Gender"
+                        [magic]="mgc.Combo_Gender"
+                        [formControlName]="mgc.Combo_Gender"
+                        required
+                        class="form-select">
+                        <option
+                            *ngFor="let o of mg.getItemListValues(mgc.Combo_Gender);"
+                            [value]="o.index"
+                        >
+                            {{o.displayValue}}
+                        </option>
+                    </select>
+                    <mgError [magic]=mgc.Combo_Gender></mgError>
+                </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="form-actions">
+                <button
+                    id="btnSave"
+                    type="button"
+                    [magic]="mgc.btnSave"
+                    [disabled]="mg.isDisabled(mgc.btnSave)"
+                    class="btn btn-primary">
+                    Save
+                </button>
+            </div>
+
+            <!-- SubForms Section -->
+            <div class="subforms-container">
+                <!-- Contact SubForm -->
+                <magic-subform
+                    [magic]="mgc.SubF_M_Contact"
+                    class="subform-wireframe">
+                </magic-subform>
+
+                <!-- Email SubForm -->
+                <magic-subform
+                    [magic]="mgc.SubFMEmail"
+                    class="subform-wireframe">
+                </magic-subform>
+            </div>
+
+            <!-- Quit Button -->
+            <div class="form-actions">
+                <button
+                    id="btnQuit"
+                    type="button"
+                    [magic]="mgc.btnQuit"
+                    class="btn btn-secondary">
+                    Quit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

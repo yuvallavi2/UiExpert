@@ -2,7 +2,7 @@
 <Application>
 
   <Header>
-    <Version val="14100.00"/>
+    <Version val="14121.00"/>
     <WithIsn val="Y"/>
     <_InternalTask val="N"/>
     <IsRoot val="N"/>
@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="StartProgram" ISN_2="1" LastIsn="3" id="33554462">
-          <LastModified _date="738853" _time="67587" date="29/11/2023" time="18:46:27"/>
+          <LastModified _date="739638" _time="53485" date="22/01/2026" time="14:51:25"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -99,6 +99,7 @@
           </Sort>
           <ForceRecordDelete DEL="N"/>
           <EndTaskCondition val="N"/>
+          <SkipLockedRecords val="N"/>
           <EvaluateEndCondition val="B"/>
           <InitialMode val="M"/>
           <Locate Direction="A"/>
@@ -563,6 +564,7 @@
                 <Width id="23" val="120"/>
                 <Height id="24" val="149"/>
                 <ControlName id="46" val="userDropdown"/>
+                <Visible Exp="33554439" id="61"/>
                 <Arguments id="126"/>
                 <ConnectTo id="156" val="2"/>
                 <TaskNumber comp="-1" id="183" obj="33554435"/>
@@ -600,6 +602,10 @@
           <Expression id="33554438">
             <ExpSyntax val="'assets/img/avatars/8.jpg'"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="33554439">
+            <ExpSyntax val="'FALSE'LOG"/>
+            <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
         <EVNT DESC="helloXPA" FORCE_EXIT="N" id="33554433">
@@ -839,6 +845,7 @@
             </Sort>
             <ForceRecordDelete DEL="N"/>
             <EndTaskCondition val="Y"/>
+            <SkipLockedRecords val="N"/>
             <EvaluateEndCondition val="A"/>
             <InitialMode val="M"/>
             <Locate Direction="A"/>
@@ -1964,6 +1971,7 @@
             </Sort>
             <ForceRecordDelete DEL="N"/>
             <EndTaskCondition val="N"/>
+            <SkipLockedRecords val="N"/>
             <EvaluateEndCondition val="B"/>
             <InitialMode val="M"/>
             <Locate Direction="A"/>

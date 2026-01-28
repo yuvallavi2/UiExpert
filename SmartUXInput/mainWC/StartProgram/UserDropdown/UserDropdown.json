@@ -1,0 +1,104 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"UserDropdown",
+		"component_path":	"mainWC/StartProgram/UserDropdown/",
+		"module_name":	"",
+		"component_uniquename":	"StartProgram_UserDropdown_UserDropdown"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	0,
+		"height":	0
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"numberOfUpdates",
+				"format":	"30",
+				"common_line_id":	"line13"
+			},
+			"coordinates":	{
+				"x":	25,
+				"y":	13,
+				"width":	41,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"userImage",
+				"attribute":	"A",
+				"common_line_id":	"line13"
+			},
+			"coordinates":	{
+				"x":	135,
+				"y":	13,
+				"width":	60,
+				"height":	47
+			},
+			"hint":	null,
+			"controlType":	"I",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"numberOfMessages",
+				"format":	"30",
+				"common_line_id":	"line42"
+			},
+			"coordinates":	{
+				"x":	25,
+				"y":	42,
+				"width":	41,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"btnSettings",
+				"format":	"Button",
+				"common_line_id":	"line71"
+			},
+			"coordinates":	{
+				"x":	25,
+				"y":	71,
+				"width":	41,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"btnLogOut",
+				"format":	"Button",
+				"common_line_id":	"line100"
+			},
+			"coordinates":	{
+				"x":	25,
+				"y":	100,
+				"width":	41,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		}
+	]
+}

@@ -1,0 +1,116 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"StartProgram",
+		"custom_properties":	[
+			"menuData"
+		],
+		"component_path":	"mainWC/StartProgram/",
+		"module_name":	"",
+		"component_uniquename":	"StartProgram_StartProgram"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	608,
+		"height":	323
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"btnHelloXPA",
+				"format":	"HelloXPA",
+				"common_line_id":	"line9"
+			},
+			"coordinates":	{
+				"x":	56,
+				"y":	51,
+				"width":	70,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"headerText",
+				"mgformat":	"mgFormat",
+				"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+				"attribute":	"A",
+				"common_line_id":	"line9"
+			},
+			"coordinates":	{
+				"x":	56,
+				"y":	88,
+				"width":	134,
+				"height":	18
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"SubformRout",
+				"is_router_outlet":	true,
+				"default_outlet":	true,
+				"common_line_id":	"line9"
+			},
+			"coordinates":	{
+				"x":	385,
+				"y":	9,
+				"width":	192,
+				"height":	192
+			},
+			"hint":	null,
+			"controlType":	"F",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"footerText",
+				"modifiable":	false,
+				"mgformat":	"mgFormat",
+				"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+				"attribute":	"A",
+				"common_line_id":	"line88"
+			},
+			"coordinates":	{
+				"x":	56,
+				"y":	125,
+				"width":	134,
+				"height":	18
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"userDropdown",
+				"visible":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"common_line_id":	"line88"
+			},
+			"coordinates":	{
+				"x":	218,
+				"y":	88,
+				"width":	120,
+				"height":	149
+			},
+			"hint":	null,
+			"controlType":	"F",
+			"children":	null
+		}
+	]
+}
